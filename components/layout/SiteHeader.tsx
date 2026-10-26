@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 export default function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -17,11 +19,21 @@ export default function SiteHeader() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [mobileMenuOpen]);
 
+  const navLinks = [
+    { href: "/about", label: "About" },
+    { href: "/music", label: "Music" },
+    { href: "/writing", label: "Writing" },
+    { href: "/production", label: "Production" },
+    { href: "/community", label: "Community Care" },
+    { href: "/press", label: "Press" },
+    { href: "/contact", label: "Contact" },
+  ];
+
   return (
-    <header className="sticky top-0 z-50 bg-[#20251F]/95 backdrop-blur-md text-[#E8E4D9] border-b border-[#C9A54D]/30 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-[72px] flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-[#20251F] text-[#E8E4D9] border-b border-[#C9A54D]/30 shadow-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#C9A54D] flex items-center justify-center text-[#20251F] font-bold text-lg shadow">
+          <div className="w-10 h-10 rounded-full bg-[#C9A54D] flex items-center justify-center text-[#20251F] font-bold text-lg shadow">
             C
           </div>
           <div>
@@ -35,28 +47,23 @@ export default function SiteHeader() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8 font-medium text-sm">
-          <Link href="/about" className="hover:text-[#C9A54D] transition-colors">
-            About
-          </Link>
-          <Link href="/music" className="hover:text-[#C9A54D] transition-colors">
-            Music
-          </Link>
-          <Link href="/writing" className="hover:text-[#C9A54D] transition-colors">
-            Writing
-          </Link>
-          <Link href="/production" className="hover:text-[#C9A54D] transition-colors">
-            Production
-          </Link>
-          <Link href="/community" className="hover:text-[#C9A54D] transition-colors">
-            Community Care
-          </Link>
-          <Link href="/press" className="hover:text-[#C9A54D] transition-colors">
-            Press
-          </Link>
-          <Link href="/contact" className="hover:text-[#C9A54D] transition-colors">
-            Contact
-          </Link>
+        <nav className="hidden md:flex items-center gap-7 font-medium text-sm">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`transition-colors py-1 ${
+                  isActive
+                    ? "text-[#C9A54D] border-b-2 border-[#C9A54D] font-semibold"
+                    : "text-[#E8E4D9] hover:text-[#C9A54D]"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
@@ -83,74 +90,42 @@ export default function SiteHeader() {
             aria-label="Toggle navigation menu"
             className="p-2 text-[#E8E4D9] hover:text-[#C9A54D] focus:outline-none focus:ring-2 focus:ring-[#C9A54D] rounded"
           >
-            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Overlay / Drawer */}
+      {/* Mobile Navigation Solid Opaque Drawer */}
       {mobileMenuOpen && (
         <div
           id="mobile-menu"
-          className="md:hidden fixed inset-0 top-14 sm:top-[72px] bg-[#20251F] border-t border-[#C9A54D]/20 p-6 flex flex-col justify-between z-50 animate-fadeIn"
+          className="md:hidden fixed inset-0 top-16 sm:top-20 bg-[#20251F] z-[100] p-6 flex flex-col justify-between overflow-y-auto shadow-2xl"
         >
-          <nav className="flex flex-col gap-6 text-lg font-medium">
-            <Link
-              href="/about"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-[#C9A54D] transition-colors py-2 border-b border-[#E8E4D9]/10"
-            >
-              About
-            </Link>
-            <Link
-              href="/music"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-[#C9A54D] transition-colors py-2 border-b border-[#E8E4D9]/10"
-            >
-              Music
-            </Link>
-            <Link
-              href="/writing"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-[#C9A54D] transition-colors py-2 border-b border-[#E8E4D9]/10"
-            >
-              Writing
-            </Link>
-            <Link
-              href="/production"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-[#C9A54D] transition-colors py-2 border-b border-[#E8E4D9]/10"
-            >
-              Production
-            </Link>
-            <Link
-              href="/community"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-[#C9A54D] transition-colors py-2 border-b border-[#E8E4D9]/10"
-            >
-              Community Care
-            </Link>
-            <Link
-              href="/press"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-[#C9A54D] transition-colors py-2 border-b border-[#E8E4D9]/10"
-            >
-              Press
-            </Link>
-            <Link
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-[#C9A54D] transition-colors py-2 border-b border-[#E8E4D9]/10"
-            >
-              Contact
-            </Link>
+          <nav className="flex flex-col gap-3 py-4">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-lg font-medium px-4 py-3 rounded-lg transition-all ${
+                    isActive
+                      ? "bg-[#C9A54D]/20 text-[#C9A54D] border-l-4 border-[#C9A54D] font-bold"
+                      : "text-[#E8E4D9] hover:bg-white/5 active:bg-white/10"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
-          <div className="pt-6 pb-12">
+          <div className="pt-6 pb-12 border-t border-white/10">
             <Link
               href="/hire"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-center w-full py-3.5 rounded bg-[#C9A54D] text-[#20251F] font-bold text-base shadow-lg"
+              className="block text-center w-full py-4 rounded-lg bg-[#C9A54D] text-[#20251F] font-bold text-base shadow-lg hover:bg-[#b8933e] transition-all"
             >
               Hire / Book
             </Link>
