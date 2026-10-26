@@ -12,7 +12,7 @@ export default function SafeguardingPage() {
       <div className="bg-white rounded-xl p-8 border border-[#D6D9D1] shadow-sm space-y-6 text-[#5B6259]">
         <h2 className="text-xl font-bold text-[#20251F]">1. Protection of Children</h2>
         <p>
-          We strictly prohibit publishing children's full names, personal contact details, medical records, or sensitive locations. All community care activities prioritize child welfare above all else.
+          We strictly prohibit publishing children&apos;s full names, personal contact details, medical records, or sensitive locations. All community care activities prioritize child welfare above all else.
         </p>
 
         <h2 className="text-xl font-bold text-[#20251F]">2. Imagery & Consent</h2>

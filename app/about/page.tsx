@@ -7,7 +7,7 @@ export default function AboutPage() {
         <span className="text-xs uppercase tracking-widest text-[#C9A54D] font-bold">About Chikondi</span>
         <h1 className="text-4xl font-extrabold mt-2 mb-4">Creative Journey & Identity</h1>
         <p className="text-lg text-[#5B6259] max-w-3xl">
-          An overview of Chikondi's professional path in music, narrative storytelling, creative production, and community care.
+          An overview of Chikondi&apos;s professional path in music, narrative storytelling, creative production, and community care.
         </p>
       </div>
 

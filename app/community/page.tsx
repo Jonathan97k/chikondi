@@ -36,7 +36,7 @@ export default function CommunityPage() {
           <div className="bg-white rounded-xl p-8 border border-[#D6D9D1] shadow-sm space-y-4">
             <h3 className="text-xl font-bold text-[#20251F]">Safeguarding Commitment</h3>
             <p className="text-[#5B6259] text-sm leading-relaxed">
-              In accordance with strict safeguarding standards, we never publish children's full names, medical details, or unsafe locations. All imagery and stories are strictly authorized and protected.
+              In accordance with strict safeguarding standards, we never publish children&apos;s full names, medical details, or unsafe locations. All imagery and stories are strictly authorized and protected.
             </p>
             <Link
               href="/safeguarding"

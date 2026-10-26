@@ -43,7 +43,7 @@ export default function WritingPage() {
               <h2 className="text-2xl font-bold mb-1 text-[#20251F]">{project.title}</h2>
               <p className="text-xs text-[#C9A54D] font-semibold mb-4 uppercase tracking-wider">{project.genre}</p>
               <p className="text-[#5B6259] text-sm leading-relaxed mb-6 italic">
-                "{project.logline}"
+                &ldquo;{project.logline}&rdquo;
               </p>
             </div>
             <div className="pt-4 border-t border-[#D6D9D1] flex justify-between items-center text-xs text-[#5B6259]">

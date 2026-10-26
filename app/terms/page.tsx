@@ -22,7 +22,7 @@ export default function TermsPage() {
 
         <h2 className="text-xl font-bold text-[#20251F]">3. Limitation of Liability</h2>
         <p>
-          Chikondi Official provides this website on an "as is" basis without warranties of any kind. We are not liable for any damages arising from the use or inability to use this platform.
+          Chikondi Official provides this website on an &ldquo;as is&rdquo; basis without warranties of any kind. We are not liable for any damages arising from the use or inability to use this platform.
         </p>
       </div>
     </div>
