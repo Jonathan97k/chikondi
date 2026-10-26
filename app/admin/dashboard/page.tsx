@@ -16,6 +16,20 @@ export default function AdminDashboardPage() {
         </Link>
       </div>
 
+      {/* Brand Logo System Approval Notice */}
+      <div className="bg-[#20251F] text-[#E8E4D9] rounded-xl p-6 mb-8 border border-[#C9A54D]/40 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+          <span className="text-xs uppercase tracking-widest text-[#C9A54D] font-bold">Branding Status</span>
+          <h2 className="text-xl font-bold mt-1">Logo System & Assets (Draft - Pending Owner Approval)</h2>
+          <p className="text-sm text-[#E8E4D9]/80 mt-1">
+            Brand logo system variants and assets are generated in <code className="text-[#C9A54D]">design/branding/</code>. Not final until Chikondi signs off.
+          </p>
+        </div>
+        <span className="px-3 py-1.5 rounded bg-[#C9A54D] text-[#20251F] text-xs font-bold uppercase tracking-wider">
+          Pending Review
+        </span>
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
         <div className="bg-white p-6 rounded-xl border border-[#D6D9D1] shadow-sm">
           <span className="text-xs font-bold uppercase text-[#5B6259]">New Inquiries</span>

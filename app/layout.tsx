@@ -18,6 +18,27 @@ export const metadata: Metadata = {
   title: "Chikondi Official | Stories, Sound & Purpose",
   description: "Official professional platform showcasing music, scriptwriting, production services, and community care by Chikondi.",
   manifest: "/manifest.json",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.svg",
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    title: "Chikondi Official | Stories, Sound & Purpose",
+    description: "Official professional platform showcasing music, scriptwriting, production services, and community care by Chikondi.",
+    url: "https://chikondi.official",
+    siteName: "Chikondi Official",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Chikondi Official OG Image",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export const viewport: Viewport = {
