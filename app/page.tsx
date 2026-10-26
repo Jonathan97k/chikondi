@@ -1,69 +1,165 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="bg-[#E8E4D9] text-[#20251F]">
+      {/* Hero Section */}
+      <section className="relative bg-[#20251F] text-[#E8E4D9] py-24 sm:py-32 overflow-hidden border-b border-[#C9A54D]/30">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#C9A54D_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl">
+            <span className="inline-block py-1 px-3 rounded-full bg-[#C9A54D]/20 text-[#C9A54D] text-xs font-semibold tracking-wider uppercase mb-6">
+              Official Professional Platform
+            </span>
+            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-[#E8E4D9] mb-6 leading-tight">
+              Stories, Sound & <span className="text-[#C9A54D]">Purpose</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-[#E8E4D9]/80 mb-10 leading-relaxed">
+              Welcome to the official portal of Chikondi — exploring roots music, compelling narrative scriptwriting, high-level production, and community support initiatives.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/hire"
+                className="px-8 py-3.5 rounded-md bg-[#C9A54D] text-[#20251F] font-bold text-base hover:bg-[#b8933e] transition-all shadow-lg"
+              >
+                Explore Work & Hire
+              </Link>
+              <Link
+                href="/community"
+                className="px-8 py-3.5 rounded-md border-2 border-[#C9A54D] text-[#E8E4D9] font-bold text-base hover:bg-[#C9A54D]/10 transition-all"
+              >
+                Community Care
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Intro Bio Snippet */}
+      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-xl p-8 sm:p-12 shadow-sm border border-[#D6D9D1]">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            <div className="lg:col-span-2">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-[#20251F]">
+                Artistry Rooted in Truth & Culture
+              </h2>
+              <p className="text-[#5B6259] leading-relaxed mb-6">
+                Chikondi is a multifaceted creative professional, musician, and scriptwriter rooted in Rastafari principles of unity, upliftment, and compassion. Through audio releases, screenwriting, and grassroots community care, every endeavor is dedicated to meaningful impact.
+              </p>
+              <Link
+                href="/about"
+                className="text-[#C9A54D] font-semibold hover:underline inline-flex items-center gap-2"
+              >
+                Read full biography & creative journey →
+              </Link>
+            </div>
+            <div className="bg-[#20251F] text-[#E8E4D9] p-6 rounded-lg border border-[#C9A54D]/30">
+              <h3 className="text-lg font-bold text-[#C9A54D] mb-2">Core Pillars</h3>
+              <ul className="space-y-3 text-sm text-[#E8E4D9]/90">
+                <li className="flex items-center gap-2">✓ Music & Audio Releases</li>
+                <li className="flex items-center gap-2">✓ Screenwriting & Storytelling</li>
+                <li className="flex items-center gap-2">✓ Production & Creative Services</li>
+                <li className="flex items-center gap-2">✓ Community Care Initiatives</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pillars Grid */}
+      <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <h2 className="text-3xl font-bold tracking-tight text-[#20251F] mb-4">
+            Explore Pathways
+          </h2>
+          <p className="text-[#5B6259]">
+            Discover music releases, writing portfolios, production offerings, and community projects.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Music Card */}
+          <div className="bg-white rounded-xl p-8 shadow-sm border border-[#D6D9D1] flex flex-col justify-between hover:border-[#C9A54D] transition-all">
+            <div>
+              <div className="w-12 h-12 rounded-lg bg-[#20251F] text-[#C9A54D] flex items-center justify-center font-bold mb-6 text-xl">
+                ♫
+              </div>
+              <h3 className="text-xl font-bold text-[#20251F] mb-3">Music & Releases</h3>
+              <p className="text-[#5B6259] text-sm leading-relaxed mb-6">
+                Listen to recent singles, explore release tracklists, credits, and official streaming platform links.
+              </p>
+            </div>
+            <Link
+              href="/music"
+              className="inline-flex items-center text-sm font-semibold text-[#20251F] hover:text-[#C9A54D] transition-colors"
+            >
+              Browse music catalogue →
+            </Link>
+          </div>
+
+          {/* Writing & Production Card */}
+          <div className="bg-white rounded-xl p-8 shadow-sm border border-[#D6D9D1] flex flex-col justify-between hover:border-[#C9A54D] transition-all">
+            <div>
+              <div className="w-12 h-12 rounded-lg bg-[#20251F] text-[#C9A54D] flex items-center justify-center font-bold mb-6 text-xl">
+                ✍
+              </div>
+              <h3 className="text-xl font-bold text-[#20251F] mb-3">Writing & Production</h3>
+              <p className="text-[#5B6259] text-sm leading-relaxed mb-6">
+                View narrative scripts, loglines, professional production services, and request a project quote.
+              </p>
+            </div>
+            <div className="flex gap-4">
+              <Link
+                href="/writing"
+                className="text-sm font-semibold text-[#20251F] hover:text-[#C9A54D] transition-colors"
+              >
+                Writing →
+              </Link>
+              <Link
+                href="/production"
+                className="text-sm font-semibold text-[#20251F] hover:text-[#C9A54D] transition-colors"
+              >
+                Production →
+              </Link>
+            </div>
+          </div>
+
+          {/* Community Care Card */}
+          <div className="bg-white rounded-xl p-8 shadow-sm border border-[#D6D9D1] flex flex-col justify-between hover:border-[#C9A54D] transition-all">
+            <div>
+              <div className="w-12 h-12 rounded-lg bg-[#20251F] text-[#C9A54D] flex items-center justify-center font-bold mb-6 text-xl">
+                ♥
+              </div>
+              <h3 className="text-xl font-bold text-[#20251F] mb-3">Community Care</h3>
+              <p className="text-[#5B6259] text-sm leading-relaxed mb-6">
+                Learn about orphan care initiatives, transparent support options, and partnership opportunities.
+              </p>
+            </div>
+            <Link
+              href="/community"
+              className="inline-flex items-center text-sm font-semibold text-[#20251F] hover:text-[#C9A54D] transition-colors"
+            >
+              View community initiatives →
+            </Link>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Call to Action Banner */}
+      <section className="bg-[#20251F] text-[#E8E4D9] py-20 mt-16 border-t border-[#C9A54D]/30">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Collaborate or Inquire?</h2>
+          <p className="text-[#E8E4D9]/80 max-w-2xl mx-auto mb-8 text-lg">
+            Submit a project inquiry, booking request, or partnership proposal through our secure inquiry system.
+          </p>
+          <Link
+            href="/hire"
+            className="inline-block px-8 py-4 rounded-md bg-[#C9A54D] text-[#20251F] font-bold text-base hover:bg-[#b8933e] transition-all shadow-md"
+          >
+            Submit an Inquiry
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
