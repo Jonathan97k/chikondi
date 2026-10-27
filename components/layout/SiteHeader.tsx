@@ -33,8 +33,8 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 bg-[#20251F] text-[#E8E4D9] border-b border-[#C9A54D]/30 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-full bg-[#C9A54D] flex items-center justify-center text-[#20251F] font-bold text-lg shadow">
-            C
+          <div className="w-10 h-10 rounded-lg bg-[#20251F] border border-[#C9A54D]/30 flex items-center justify-center overflow-hidden shadow">
+            <img src="/logo.webp" alt="Chikondi Logo" className="w-8 h-8 object-contain" />
           </div>
           <div>
             <span className="text-lg sm:text-xl font-bold tracking-tight text-[#E8E4D9] group-hover:text-[#C9A54D] transition-colors">
