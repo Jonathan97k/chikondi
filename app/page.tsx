@@ -54,17 +54,6 @@ export default function HomePage() {
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_76%_44%,rgba(183,139,65,0.22),transparent_34%),radial-gradient(ellipse_at_20%_85%,rgba(83,105,72,0.24),transparent_40%)]" />
         <div className="absolute inset-0 -z-10 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)] [background-size:72px_72px]" />
         <div className="mx-auto flex min-h-[680px] max-w-[1440px] flex-col justify-between px-6 pb-12 pt-10 sm:min-h-[760px] sm:px-12 sm:pb-16 lg:px-20">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-3" aria-label="Chikondi home">
-              <Image src="/logo.webp" alt="" width={42} height={42} className="h-10 w-10 object-contain" priority />
-              <span className="text-xs font-semibold uppercase tracking-[0.28em] text-[#e8dfca]">Chikondi</span>
-            </Link>
-            <span className="hidden text-[10px] uppercase tracking-[0.3em] text-[#c9a96c] sm:block">Independent artist · Malawi</span>
-            <Link href="/hire" className="border border-[#c9a96c]/70 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#f1eee5] transition hover:bg-[#c9a96c] hover:text-[#171b17]">
-              Booking enquiries
-            </Link>
-          </div>
-
           <div className="grid items-end gap-12 lg:grid-cols-[1.25fr_.75fr]">
             <div className="max-w-4xl">
               <p className="mb-6 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.34em] text-[#c9a96c]">
