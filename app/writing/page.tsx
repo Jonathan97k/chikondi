@@ -1,71 +1,10 @@
 import Link from "next/link";
 
 export default function WritingPage() {
-  const projects = [
-    {
-      slug: "voices-of-the-valley",
-      title: "Voices of the Valley",
-      format: "Feature Film Screenplay",
-      genre: "Drama / Social Realism",
-      logline: "A resilient community organizer champions local youth against corporate displacement.",
-      status: "Completed Draft",
-    },
-    {
-      slug: "roots-and-concrete",
-      title: "Roots and Concrete",
-      format: "Television Pilot",
-      genre: "Drama / Cultural Series",
-      logline: "Navigating identity, heritage, and artistic expression in a changing metropolitan landscape.",
-      status: "In Development",
-    },
-  ];
-
   return (
-    <div className="max-w-6xl mx-auto px-4 py-16 text-[#20251F]">
-      <div className="mb-12 border-b border-[#D6D9D1] pb-8">
-        <span className="text-xs uppercase tracking-widest text-[#C9A54D] font-bold">Scriptwriting Portfolio</span>
-        <h1 className="text-4xl font-extrabold mt-2 mb-4">Narrative Projects & Screenwriting</h1>
-        <p className="text-lg text-[#5B6259] max-w-3xl">
-          Explore approved scriptwriting projects, synopses, and storytelling deliverables. Unpublished scripts remain private.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        {projects.map((project) => (
-          <div key={project.slug} className="bg-white rounded-xl p-8 border border-[#D6D9D1] shadow-sm flex flex-col justify-between">
-            <div>
-              <div className="flex justify-between items-center mb-4">
-                <span className="py-1 px-3 rounded-full bg-[#20251F] text-[#C9A54D] text-xs font-semibold uppercase">
-                  {project.format}
-                </span>
-                <span className="text-xs text-[#5B6259] font-medium">{project.status}</span>
-              </div>
-              <h2 className="text-2xl font-bold mb-1 text-[#20251F]">{project.title}</h2>
-              <p className="text-xs text-[#C9A54D] font-semibold mb-4 uppercase tracking-wider">{project.genre}</p>
-              <p className="text-[#5B6259] text-sm leading-relaxed mb-6 italic">
-                &ldquo;{project.logline}&rdquo;
-              </p>
-            </div>
-            <div className="pt-4 border-t border-[#D6D9D1] flex justify-between items-center text-xs text-[#5B6259]">
-              <span>Confidential / Rights Protected</span>
-              <span>Inquiry Required for Access</span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="bg-[#20251F] text-[#E8E4D9] rounded-xl p-8 text-center">
-        <h3 className="text-xl font-bold mb-3 text-[#C9A54D]">Commission a Scriptwriting Project</h3>
-        <p className="text-sm text-[#E8E4D9]/80 max-w-xl mx-auto mb-6">
-          Submit your project format, premise, timeline, and collaboration brief for scriptwriting services.
-        </p>
-        <Link
-          href="/hire"
-          className="inline-block py-3 px-6 rounded bg-[#C9A54D] text-[#20251F] font-bold text-sm hover:bg-[#b8933e] transition-all"
-        >
-          Submit Scriptwriting Brief
-        </Link>
-      </div>
+    <div className="bg-[#eee9dd] text-[#20251f]">
+      <section className="bg-[#20271f] px-6 py-24 text-[#f1eee5] sm:px-12 lg:px-20 lg:py-32"><div className="mx-auto max-w-6xl"><p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#c9a96c]">Scriptwriting · Film · Story</p><h1 className="mt-6 max-w-4xl font-serif text-6xl leading-[.95] sm:text-8xl">Stories built<br /><em className="text-[#c9a96c]">to stay with you.</em></h1><p className="mt-8 max-w-2xl text-base leading-8 text-[#d0d0c5]">A portfolio space for screenplays, film concepts, narrative development and selected writing work.</p></div></section>
+      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-12 lg:px-20"><div className="grid gap-10 md:grid-cols-[.7fr_1.3fr]"><div><p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#92713d]">Selected work</p><h2 className="mt-4 font-serif text-4xl sm:text-5xl">Writing for the screen.</h2></div><div className="border-y border-[#d2cbbb] py-8"><p className="text-sm leading-7 text-[#686b61]">Approved project titles, loglines, formats, credits and development status will be added after Chikondi reviews the material. Unpublished scripts and confidential concepts will remain protected.</p><p className="mt-5 text-xs font-semibold uppercase tracking-[.18em] text-[#92713d]">Portfolio materials awaiting approval</p></div></div><div className="mt-16 bg-[#e3ddcf] p-8 sm:p-12"><p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#92713d]">Commission & collaboration</p><h2 className="mt-4 font-serif text-4xl">Have a story to develop?</h2><p className="mt-4 max-w-xl text-sm leading-7 text-[#686b61]">Share the format, creative brief and intended timeline for a writing or film collaboration.</p><Link href="/hire" className="mt-7 inline-flex bg-[#20271f] px-6 py-3 text-[10px] font-bold uppercase tracking-[.2em] text-[#f1eee5]">Discuss a project ↗</Link></div></section>
     </div>
   );
 }
