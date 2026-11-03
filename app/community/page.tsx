@@ -2,51 +2,11 @@ import Link from "next/link";
 
 export default function CommunityPage() {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-16 text-[#20251F]">
-      <div className="mb-12 border-b border-[#D6D9D1] pb-8">
-        <span className="text-xs uppercase tracking-widest text-[#C9A54D] font-bold">Community Care</span>
-        <h1 className="text-4xl font-extrabold mt-2 mb-4">Orphan Care & Community Support</h1>
-        <p className="text-lg text-[#5B6259] max-w-3xl">
-          Transparent overview of community initiatives, support programs, and partnership pathways.
-        </p>
-      </div>
-
-      <div className="space-y-12 mb-16">
-        <div className="bg-white rounded-xl p-8 sm:p-10 border border-[#D6D9D1] shadow-sm space-y-4">
-          <h2 className="text-2xl font-bold">Mission & Operating Principles</h2>
-          <p className="text-[#5B6259] leading-relaxed">
-            Rooted in compassion and community responsibility, our community-care initiatives focus on supporting orphaned children with essential care, educational resources, and a nurturing environment. We maintain strict safeguarding policies, ensuring absolute privacy, dignity, and protection for all participants.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-xl p-8 border border-[#D6D9D1] shadow-sm space-y-4">
-            <h3 className="text-xl font-bold text-[#20251F]">Support Options</h3>
-            <p className="text-[#5B6259] text-sm leading-relaxed">
-              We welcome inquiries regarding approved in-kind contributions, community volunteering, and strategic partnerships. Financial donations are managed only where operationally authorized and disclosed.
-            </p>
-            <Link
-              href="/hire"
-              className="inline-block pt-2 text-[#C9A54D] font-semibold text-sm hover:underline"
-            >
-              Inquire about partnership →
-            </Link>
-          </div>
-
-          <div className="bg-white rounded-xl p-8 border border-[#D6D9D1] shadow-sm space-y-4">
-            <h3 className="text-xl font-bold text-[#20251F]">Safeguarding Commitment</h3>
-            <p className="text-[#5B6259] text-sm leading-relaxed">
-              In accordance with strict safeguarding standards, we never publish children&apos;s full names, medical details, or unsafe locations. All imagery and stories are strictly authorized and protected.
-            </p>
-            <Link
-              href="/safeguarding"
-              className="inline-block pt-2 text-[#C9A54D] font-semibold text-sm hover:underline"
-            >
-              Read safeguarding policy →
-            </Link>
-          </div>
-        </div>
-      </div>
+    <div className="bg-[#eee9dd] text-[#20251f]">
+      <section className="bg-[#20271f] px-6 py-24 text-[#f1eee5] sm:px-12 lg:px-20 lg:py-32"><div className="mx-auto max-w-6xl"><p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#c9a96c]">Community · Care · Responsibility</p><h1 className="mt-6 max-w-4xl font-serif text-6xl leading-[.95] sm:text-8xl">People are<br /><em className="text-[#c9a96c]">the purpose.</em></h1><p className="mt-8 max-w-2xl text-base leading-8 text-[#d0d0c5]">A space to share Chikondi’s commitment to supporting orphans and community, and to explore responsible ways to connect.</p></div></section>
+      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-12 lg:px-20"><div className="grid gap-10 md:grid-cols-[.8fr_1.2fr]"><div><p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#92713d]">A commitment to care</p><h2 className="mt-4 font-serif text-4xl sm:text-5xl">Support with dignity.</h2></div><div className="space-y-5 text-sm leading-8 text-[#686b61]"><p>Chikondi has shared that caring for and supporting orphans is important to him. This section is being developed to explain that work accurately, including what support is needed and how interested people can participate.</p><p>Specific initiatives, partner organizations, donation arrangements and impact figures will only be published once they have been confirmed. This website does not currently collect donations.</p></div></div>
+        <div className="mt-16 grid gap-6 md:grid-cols-2"><article className="border border-[#d2cbbb] bg-[#f7f3ea] p-8"><p className="text-[10px] font-bold uppercase tracking-[.25em] text-[#92713d]">Get involved</p><h3 className="mt-4 font-serif text-3xl">Discuss a partnership.</h3><p className="mt-4 text-sm leading-7 text-[#686b61]">Organizations and individuals interested in responsible collaboration can make an inquiry.</p><Link href="/hire" className="mt-6 inline-flex text-[10px] font-bold uppercase tracking-[.2em] text-[#92713d]">Make an inquiry ↗</Link></article><article className="border border-[#d2cbbb] bg-[#e3ddcf] p-8"><p className="text-[10px] font-bold uppercase tracking-[.25em] text-[#92713d]">Safeguarding first</p><h3 className="mt-4 font-serif text-3xl">Protecting children’s dignity.</h3><p className="mt-4 text-sm leading-7 text-[#686b61]">No child profiles, identifying personal details or photographs will be published without appropriate consent and safeguarding review.</p><Link href="/safeguarding" className="mt-6 inline-flex text-[10px] font-bold uppercase tracking-[.2em] text-[#92713d]">Read safeguarding principles ↗</Link></article></div>
+      </section>
     </div>
   );
 }
