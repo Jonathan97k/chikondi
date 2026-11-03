@@ -29,11 +29,11 @@ export default function HomePage() {
                 <Link href="/hire" className="border border-white/30 px-7 py-4 text-[10px] font-bold uppercase tracking-[.22em] transition hover:border-[#c9a96c] hover:text-[#c9a96c]">Work together</Link>
               </div>
             </div>
-            <div className="relative hidden min-h-[390px] items-end justify-end lg:flex">
+            <div className="relative flex min-h-[320px] items-end justify-end lg:min-h-[390px]">
               <div className="absolute bottom-0 right-0 h-[390px] w-[82%] border border-[#c9a96c]/40" />
-              <div className="absolute bottom-8 right-8 flex h-[330px] w-[82%] items-center justify-center bg-[linear-gradient(145deg,#394838,#202a21_58%,#171d18)]">
+              <div className="absolute bottom-6 right-0 flex h-[280px] w-[92%] sm:bottom-8 sm:right-8 sm:h-[330px] sm:w-[82%] items-center justify-center bg-[linear-gradient(145deg,#394838,#202a21_58%,#171d18)]">
                 <div className="absolute inset-5 border border-[#d2b477]/30" />
-                <div className="text-center"><img src="https://images.unsplash.com/photo-1638389746430-82c12a2d0bb2?auto=format&fit=crop&w=1100&q=85" alt="Sample image of an African voice artist recording in a studio; not a photograph of Chikondi" className="absolute inset-0 h-full w-full object-cover opacity-75" /><div className="absolute inset-0 bg-gradient-to-t from-[#171d18]/90 via-transparent to-[#171d18]/10" /><div className="absolute bottom-8 left-8 right-8"><p className="text-[9px] font-bold uppercase tracking-[.28em] text-[#e8dfca]">Visual direction · Sample image</p><p className="mt-2 font-serif text-3xl text-white">The artist at work.</p></div></div>
+                <div className="text-center"><img src="https://images.unsplash.com/photo-1729184224006-bd5d8556050e?auto=format&fit=crop&w=1600&q=85" alt="Temporary sample recording-studio photograph; not Chikondi" className="absolute inset-0 h-full w-full object-cover opacity-75" /><div className="absolute inset-0 bg-gradient-to-t from-[#171d18]/90 via-transparent to-[#171d18]/10" /><div className="absolute bottom-8 left-8 right-8"><p className="text-[9px] font-bold uppercase tracking-[.28em] text-[#e8dfca]">Visual direction · Sample image</p><p className="mt-2 font-serif text-3xl text-white">The artist at work.</p></div></div>
               </div>
               <p className="absolute bottom-0 left-0 max-w-[160px] text-[9px] uppercase leading-5 tracking-[.2em] text-[#bdb9ad]">An evolving portrait of an independent creative voice.</p>
             </div>
