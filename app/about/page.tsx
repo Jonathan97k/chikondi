@@ -2,58 +2,9 @@ import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-16 text-[#20251F]">
-      <div className="mb-12 border-b border-[#D6D9D1] pb-8">
-        <span className="text-xs uppercase tracking-widest text-[#C9A54D] font-bold">About Chikondi</span>
-        <h1 className="text-4xl font-extrabold mt-2 mb-4">Creative Journey & Identity</h1>
-        <p className="text-lg text-[#5B6259] max-w-3xl">
-          An overview of Chikondi&apos;s professional path in music, narrative storytelling, creative production, and community care.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
-        <div className="md:col-span-2 space-y-6">
-          <h2 className="text-2xl font-bold">Biography & Principles</h2>
-          <p className="leading-relaxed text-[#5B6259]">
-            Chikondi is a dedicated creative professional whose work bridges music, screenwriting, and impactful community outreach. Operating under approved professional standards, his artistry is guided by Rastafari principles emphasizing truth, cultural grounding, unity, and genuine community welfare.
-          </p>
-          <p className="leading-relaxed text-[#5B6259]">
-            With years of experience refining narrative scripts, producing audio releases, and organizing grassroots care initiatives for vulnerable youth and orphans, Chikondi maintains a steadfast commitment to integrity and quality across all endeavors.
-          </p>
-
-          <h3 className="text-xl font-bold pt-4">Professional Pillars</h3>
-          <ul className="list-disc pl-5 space-y-2 text-[#5B6259]">
-            <li><strong>Music:</strong> Roots-infused audio artistry, authentic lyricism, and official distribution.</li>
-            <li><strong>Scriptwriting:</strong> Narrative screenplays, compelling loglines, and structured storytelling.</li>
-            <li><strong>Production:</strong> Professional media production, creative consultation, and project deliverables.</li>
-            <li><strong>Community Care:</strong> Transparent support programs and initiatives for orphaned children.</li>
-          </ul>
-        </div>
-
-        <div className="bg-white p-6 rounded-xl border border-[#D6D9D1] shadow-sm h-fit space-y-6">
-          <div>
-            <h3 className="text-sm uppercase tracking-wider text-[#C9A54D] font-bold mb-2">Quick Facts</h3>
-            <ul className="space-y-3 text-sm text-[#5B6259]">
-              <li><strong>Professional Name:</strong> Chikondi</li>
-              <li><strong>Primary Focus:</strong> Music, Writing, Production, Community</li>
-              <li><strong>Identity:</strong> Rastafari Man</li>
-              <li><strong>Contact Route:</strong> Via <Link href="/contact" className="text-[#C9A54D] underline">Contact</Link> or <Link href="/hire" className="text-[#C9A54D] underline">Hire</Link></li>
-            </ul>
-          </div>
-          <div className="pt-4 border-t border-[#D6D9D1]">
-            <h3 className="text-sm uppercase tracking-wider text-[#C9A54D] font-bold mb-2">Media & Press</h3>
-            <p className="text-xs text-[#5B6259] mb-4">
-              Access approved press biographies, high-resolution imagery, and official media contact channels.
-            </p>
-            <Link
-              href="/press"
-              className="block text-center w-full py-2.5 px-4 rounded bg-[#20251F] text-[#E8E4D9] text-sm font-semibold hover:bg-[#C9A54D] hover:text-[#20251F] transition-all"
-            >
-              Visit Press Kit
-            </Link>
-          </div>
-        </div>
-      </div>
+    <div className="bg-[#eee9dd] text-[#20251f]">
+      <section className="bg-[#171d18] px-6 py-24 text-[#f4efe4] sm:px-12 lg:px-20 lg:py-32"><div className="mx-auto max-w-6xl"><p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#c9a96c]">The person behind the work</p><h1 className="mt-6 font-serif text-6xl leading-[.95] sm:text-8xl">The story of<br /><em className="text-[#c9a96c]">Chikondi.</em></h1><p className="mt-8 max-w-2xl text-base leading-8 text-[#d7d3c8]">An introduction to the artist, writer, producer and the values that shape his creative life.</p></div></section>
+      <section className="mx-auto grid max-w-6xl gap-12 px-6 py-20 sm:px-12 lg:grid-cols-[1.2fr_.8fr] lg:px-20"><div className="space-y-6"><p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#92713d]">Biography · Identity · Values</p><h2 className="font-serif text-4xl sm:text-5xl">A life and practice still being told.</h2><p className="text-base leading-8 text-[#686b61]">Chikondi is a musician, scriptwriter and producer whose creative interests sit alongside a commitment to caring for orphans and supporting community. He identifies with Rastafari. This platform will tell his story in his own voice, with the details, experiences and milestones he chooses to share.</p><p className="text-sm leading-7 text-[#686b61]">A full biography, personal history, selected milestones and approved portrait photography will be added after review. This avoids publishing assumptions about his life or professional history.</p><Link href="/hire" className="inline-flex border-b border-[#92713d] pb-2 text-[10px] font-bold uppercase tracking-[.2em]">Connect with Chikondi ↗</Link></div><aside className="h-fit border border-[#d2cbbb] bg-[#e3ddcf] p-8"><p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#92713d]">Creative pillars</p><ul className="mt-6 space-y-4 font-serif text-2xl"><li>Music</li><li>Scriptwriting & film</li><li>Creative production</li><li>Community care</li><li>Rastafari identity</li></ul></aside></section>
     </div>
   );
 }
