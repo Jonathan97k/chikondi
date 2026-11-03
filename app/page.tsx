@@ -33,7 +33,7 @@ export default function HomePage() {
               <div className="absolute bottom-0 right-0 h-[390px] w-[82%] border border-[#c9a96c]/40" />
               <div className="absolute bottom-8 right-8 flex h-[330px] w-[82%] items-center justify-center bg-[linear-gradient(145deg,#394838,#202a21_58%,#171d18)]">
                 <div className="absolute inset-5 border border-[#d2b477]/30" />
-                <div className="text-center"><span className="font-serif text-[180px] leading-none text-[#d2b477]/80">C</span><p className="mt-3 text-[9px] uppercase tracking-[.34em] text-[#e8dfca]/70">Culture · Craft · Community</p></div>
+                <div className="text-center"><img src="https://images.unsplash.com/photo-1638389746430-82c12a2d0bb2?auto=format&fit=crop&w=1100&q=85" alt="Sample image of an African voice artist recording in a studio; not a photograph of Chikondi" className="absolute inset-0 h-full w-full object-cover opacity-75" /><div className="absolute inset-0 bg-gradient-to-t from-[#171d18]/90 via-transparent to-[#171d18]/10" /><div className="absolute bottom-8 left-8 right-8"><p className="text-[9px] font-bold uppercase tracking-[.28em] text-[#e8dfca]">Visual direction · Sample image</p><p className="mt-2 font-serif text-3xl text-white">The artist at work.</p></div></div>
               </div>
               <p className="absolute bottom-0 left-0 max-w-[160px] text-[9px] uppercase leading-5 tracking-[.2em] text-[#bdb9ad]">An evolving portrait of an independent creative voice.</p>
             </div>
