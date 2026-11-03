@@ -20,24 +20,22 @@ export default function SiteHeader() {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { href: "/about", label: "About" },
     { href: "/music", label: "Music" },
-    { href: "/writing", label: "Writing" },
+    { href: "/writing", label: "Film & Writing" },
     { href: "/production", label: "Production" },
-    { href: "/community", label: "Community Care" },
-    { href: "/press", label: "Press" },
-    { href: "/contact", label: "Contact" },
+    { href: "/about", label: "About" },
+    { href: "/community", label: "Community" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-[#20251F] text-[#E8E4D9] border-b border-[#C9A54D]/30 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-[#171d18] text-[#f4efe4] border-b border-[#c9a96c]/30 shadow-md">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-20 h-16 sm:h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-lg bg-[#20251F] border border-[#C9A54D]/30 flex items-center justify-center overflow-hidden shadow">
             <img src="/logo.webp" alt="Chikondi Logo" className="w-8 h-8 object-contain" />
           </div>
           <div>
-            <span className="text-lg sm:text-xl font-bold tracking-tight text-[#E8E4D9] group-hover:text-[#C9A54D] transition-colors">
+            <span className="text-lg sm:text-xl font-bold tracking-tight text-[#f4efe4] group-hover:text-[#c9a96c] transition-colors">
               Chikondi Official
             </span>
             <span className="hidden sm:block text-xs text-[#C9A54D] tracking-widest uppercase">
@@ -69,7 +67,7 @@ export default function SiteHeader() {
         <div className="hidden md:flex items-center gap-4">
           <Link
             href="/hire"
-            className="inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-[#C9A54D] text-[#20251F] font-semibold text-sm hover:bg-[#b8933e] transition-all shadow-sm"
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-[#c9a96c] text-[#171d18] font-semibold text-sm hover:bg-[#e1c58e] transition-all shadow-sm"
           >
             Hire / Book
           </Link>
