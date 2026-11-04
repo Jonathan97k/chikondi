@@ -156,3 +156,24 @@ input, select, textarea {
 @media (prefers-reduced-motion: reduce) {
   .hero-photo img { animation: none !important; }
 }
+
+
+/* Subtle horizontal Rastafari flag band across the artist site header */
+.rasta-site-header {
+  position: sticky;
+  isolation: isolate;
+}
+.rasta-site-header::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0 0 auto;
+  height: 7px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    #D62828 0%, #D62828 33.333%,
+    #F2C230 33.333%, #F2C230 66.666%,
+    #16833B 66.666%, #16833B 100%
+  );
+}
