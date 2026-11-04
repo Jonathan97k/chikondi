@@ -12,20 +12,20 @@ const pillars = [
 export default function HomePage() {
   return (
     <div className="overflow-hidden bg-[#eee9dd] text-[#20251f]">
-      <section className="relative isolate min-h-[720px] overflow-hidden bg-[#171d18] text-[#f4efe4] sm:min-h-[800px]">
+      <section className="relative isolate min-h-[680px] overflow-hidden bg-[#171d18] text-[#f4efe4] sm:min-h-[800px]">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_78%_34%,rgba(190,151,82,.24),transparent_34%),radial-gradient(ellipse_at_12%_85%,rgba(70,104,73,.3),transparent_42%)]" />
         <div className="absolute inset-0 -z-10 opacity-[.09] [background-image:linear-gradient(rgba(255,255,255,.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.12)_1px,transparent_1px)] [background-size:80px_80px]" />
-        <div className="mx-auto flex min-h-[720px] max-w-[1440px] flex-col justify-between px-6 pb-10 pt-12 sm:min-h-[800px] sm:px-12 sm:pb-14 lg:px-20">
-          <div className="flex items-center justify-between text-[9px] font-semibold uppercase tracking-[.3em] text-[#d2b477]">
+        <div className="mx-auto flex min-h-[680px] max-w-[1440px] flex-col justify-between px-4 pb-8 pt-8 sm:min-h-[800px] sm:px-12 sm:pb-14 sm:pt-12 lg:px-20">
+          <div className="flex flex-wrap items-center justify-between gap-2 text-[8px] font-semibold uppercase tracking-[.2em] sm:text-[9px] sm:tracking-[.3em] text-[#d2b477]">
             <span>Independent creative platform</span><span>Music · Film · Purpose</span>
           </div>
           <div className="grid items-end gap-12 lg:grid-cols-[1.2fr_.8fr]">
             <div className="max-w-4xl">
-              <p className="mb-7 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[.34em] text-[#d2b477]"><span className="h-px w-10 bg-[#d2b477]" /> Art with roots. Stories with meaning.</p>
-              <h1 className="font-serif text-[clamp(4.5rem,13vw,11.5rem)] leading-[.76] tracking-[-.075em]">CHIKONDI<span className="text-[#c9a96c]">.</span></h1>
-              <p className="mt-10 max-w-xl text-base leading-8 text-[#d7d3c8] sm:text-lg">A creative world shaped by music, storytelling, production and a commitment to community.</p>
-              <div className="mt-9 flex flex-wrap gap-3">
-                <Link href="/music" className="bg-[#c9a96c] px-7 py-4 text-[10px] font-bold uppercase tracking-[.22em] text-[#171d18] transition hover:bg-[#e1c58e]">Enter the world <span aria-hidden="true">↗</span></Link>
+              <p className="mb-7 flex items-center gap-3 text-[9px] font-bold uppercase tracking-[.2em] sm:text-[10px] sm:tracking-[.34em] text-[#d2b477]"><span className="h-px w-10 bg-[#d2b477]" /> Art with roots. Stories with meaning.</p>
+              <h1 className="font-serif text-[clamp(3.1rem,14vw,11.5rem)] leading-[.76] tracking-[-.075em]">CHIKONDI<span className="text-[#c9a96c]">.</span></h1>
+              <p className="mt-7 max-w-xl text-sm leading-7 sm:mt-10 sm:text-base sm:leading-8 text-[#d7d3c8] sm:text-lg">A creative world shaped by music, storytelling, production and a commitment to community.</p>
+              <div className="mt-7 flex flex-wrap gap-3 sm:mt-9">
+                <Link href="/music" className="bg-[#c9a96c] px-5 py-3.5 text-[9px] sm:px-7 sm:py-4 sm:text-[10px] font-bold uppercase tracking-[.22em] text-[#171d18] transition hover:bg-[#e1c58e]">Enter the world <span aria-hidden="true">↗</span></Link>
                 <Link href="/hire" className="border border-white/30 px-7 py-4 text-[10px] font-bold uppercase tracking-[.22em] transition hover:border-[#c9a96c] hover:text-[#c9a96c]">Work together</Link>
               </div>
             </div>
