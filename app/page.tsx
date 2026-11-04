@@ -36,8 +36,8 @@ export default function HomePage() {
               <p className="mt-6 max-w-xl font-serif text-xl italic text-[#f5c400] sm:text-3xl">Music for peace, love and a better tomorrow.</p>
               <p className="mt-4 max-w-lg text-sm leading-7 text-white/85 sm:text-base">Reggae, consciousness and positive vibes. Music and creative storytelling that uplift, inspire and unite.</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/music" className="inline-flex items-center gap-3 rounded-full bg-[#f5c400] px-7 py-4 text-xs font-black uppercase tracking-wider text-[#11170f] shadow-xl transition hover:-translate-y-1 hover:bg-[#ffe05a]">▶ <span>Listen now</span></Link>
-                <Link href="/production" className="inline-flex items-center gap-3 rounded-full border border-white/80 bg-black/20 px-7 py-4 text-xs font-bold uppercase tracking-wider text-white backdrop-blur transition hover:border-[#f5c400] hover:bg-white/10">▷ <span>Watch videos</span></Link>
+                <Link href="/play" className="inline-flex items-center gap-3 rounded-full bg-[#f5c400] px-7 py-4 text-xs font-black uppercase tracking-wider text-[#11170f] shadow-xl transition hover:-translate-y-1 hover:bg-[#ffe05a]">▶ <span>Listen now</span></Link>
+                <Link href="/play" className="inline-flex items-center gap-3 rounded-full border border-white/80 bg-black/20 px-7 py-4 text-xs font-bold uppercase tracking-wider text-white backdrop-blur transition hover:border-[#f5c400] hover:bg-white/10">▷ <span>Watch videos</span></Link>
               </div>
             </div>
             <div className="hidden h-full min-h-[360px] items-end justify-end lg:flex">
