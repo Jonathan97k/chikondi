@@ -29,13 +29,13 @@ export default function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 bg-[#171d18] text-[#f4efe4] border-b border-[#c9a96c]/30 shadow-md">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-20 h-16 sm:h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
+      <div className="mx-auto flex h-16 w-full max-w-[1440px] items-center justify-between gap-2 px-4 sm:h-20 sm:px-8 lg:px-20">
+        <Link href="/" className="flex min-w-0 items-center gap-2.5 group">
           <div className="w-10 h-10 rounded-lg bg-[#20251F] border border-[#C9A54D]/30 flex items-center justify-center overflow-hidden shadow">
             <img src="/logo.webp" alt="Chikondi Logo" className="w-8 h-8 object-contain" />
           </div>
           <div>
-            <span className="text-lg sm:text-xl font-bold tracking-tight text-[#f4efe4] group-hover:text-[#c9a96c] transition-colors">
+            <span className="whitespace-nowrap text-base font-bold tracking-tight text-[#f4efe4] transition-colors group-hover:text-[#c9a96c] sm:text-xl">
               Chikondi Official
             </span>
             <span className="hidden sm:block text-xs text-[#C9A54D] tracking-widest uppercase">
@@ -74,10 +74,10 @@ export default function SiteHeader() {
         </div>
 
         {/* Mobile Hamburger Trigger */}
-        <div className="flex md:hidden items-center gap-3">
+        <div className="flex shrink-0 items-center gap-2 md:hidden">
           <Link
             href="/hire"
-            className="px-3 py-1.5 rounded bg-[#C9A54D] text-[#20251F] font-semibold text-xs"
+            className="rounded bg-[#C9A54D] px-3 py-2 text-xs font-semibold text-[#20251F] sm:px-4"
           >
             Hire
           </Link>
@@ -85,8 +85,8 @@ export default function SiteHeader() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
-            aria-label="Toggle navigation menu"
-            className="p-2 text-[#E8E4D9] hover:text-[#C9A54D] focus:outline-none focus:ring-2 focus:ring-[#C9A54D] rounded"
+            aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            className="rounded p-2 text-[#E8E4D9] hover:text-[#C9A54D] focus:outline-none focus:ring-2 focus:ring-[#C9A54D]"
           >
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -97,7 +97,7 @@ export default function SiteHeader() {
       {mobileMenuOpen && (
         <div
           id="mobile-menu"
-          className="md:hidden fixed inset-0 top-16 sm:top-20 bg-[#20251F] z-[100] p-6 flex flex-col justify-between overflow-y-auto shadow-2xl"
+          className="fixed inset-x-0 bottom-0 top-16 z-[100] flex flex-col justify-between overflow-y-auto bg-[#20251F] p-5 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-2xl sm:top-20 sm:p-8 md:hidden"
         >
           <nav className="flex flex-col gap-3 py-4">
             {navLinks.map((link) => {
