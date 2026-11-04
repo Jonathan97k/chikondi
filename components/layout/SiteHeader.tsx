@@ -28,7 +28,7 @@ export default function SiteHeader() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-[#171d18] text-[#f4efe4] border-b border-[#c9a96c]/30 shadow-md">
+    <header className="rasta-site-header sticky top-0 z-50 bg-[#171d18] text-[#f4efe4] border-b border-[#c9a96c]/30 shadow-md">
       <div className="mx-auto flex h-16 w-full max-w-[1440px] items-center justify-between gap-2 px-4 sm:h-20 sm:px-8 lg:px-20">
         <Link href="/" className="flex min-w-0 items-center gap-2.5 group">
           <div className="w-10 h-10 rounded-lg bg-[#20251F] border border-[#C9A54D]/30 flex items-center justify-center overflow-hidden shadow">
@@ -44,7 +44,6 @@ export default function SiteHeader() {
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-7 font-medium text-sm">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
@@ -73,7 +72,6 @@ export default function SiteHeader() {
           </Link>
         </div>
 
-        {/* Mobile Hamburger Trigger */}
         <div className="flex shrink-0 items-center gap-2 md:hidden">
           <Link
             href="/hire"
@@ -93,7 +91,6 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      {/* Mobile Navigation Solid Opaque Drawer */}
       {mobileMenuOpen && (
         <div
           id="mobile-menu"
