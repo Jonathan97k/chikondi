@@ -177,3 +177,47 @@ input, select, textarea {
     #16833B 66.666%, #16833B 100%
   );
 }
+
+
+/* Full-height horizontal Rastafari flag background across the entire header */
+.rasta-site-header {
+  background: linear-gradient(
+    to bottom,
+    #D62828 0%, #D62828 33.333%,
+    #F2C230 33.333%, #F2C230 66.666%,
+    #16833B 66.666%, #16833B 100%
+  ) !important;
+  color: #171d18 !important;
+  border-bottom: 1px solid rgba(23, 29, 24, .25) !important;
+}
+.rasta-site-header::before { display: none; }
+.rasta-site-header > div:first-of-type a,
+.rasta-site-header > div:first-of-type nav a,
+.rasta-site-header > div:first-of-type button {
+  color: #171d18 !important;
+}
+.rasta-site-header > div:first-of-type nav a:hover,
+.rasta-site-header > div:first-of-type a:hover {
+  color: #fff8e8 !important;
+}
+.rasta-site-header > div:first-of-type nav a[class*="border-b-2"] {
+  border-color: #171d18 !important;
+  color: #171d18 !important;
+}
+.rasta-site-header > div:first-of-type > a > div:first-child {
+  background: rgba(23, 29, 24, .88);
+  border-color: rgba(255,255,255,.35);
+}
+.rasta-site-header > div:first-of-type > a > div:last-child > span:first-child {
+  color: #171d18 !important;
+}
+.rasta-site-header > div:first-of-type > a > div:last-child > span:last-child {
+  color: #171d18 !important;
+}
+.rasta-site-header > div:first-of-type > div > a {
+  background: #171d18 !important;
+  color: #fff8e8 !important;
+}
+.rasta-site-header > div:first-of-type > div > button {
+  color: #171d18 !important;
+}
