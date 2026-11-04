@@ -1,3 +1,17 @@
+import Link from "next/link";
+
+const pillars = [
+  { number: "01", title: "Music & Artist Portfolio", detail: "A home for original music, listening links, releases and the stories behind the sound.", href: "/music", action: "Explore the music" },
+  { number: "02", title: "Scriptwriting & Film", detail: "Screenwriting, story development and film projects presented with respect for creative ownership.", href: "/writing", action: "Explore the writing" },
+  { number: "03", title: "Music & Video Production", detail: "Creative production services, collaborations and project enquiries.", href: "/production", action: "View production" },
+  { number: "04", title: "The Story of Chikondi", detail: "Biography, creative journey, values and Rastafari identity—in his own words.", href: "/about", action: "Read the story" },
+  { number: "05", title: "Community & Orphan Support", detail: "A thoughtful space for community care, responsible support and partnership enquiries.", href: "/community", action: "Explore community" },
+  { number: "06", title: "Bookings & Inquiries", detail: "A clear route for performances, commissions, production work and collaborations.", href: "/hire", action: "Start an inquiry" },
+];
+
+export default function HomePage() {
+  return (
+    <div className="overflow-hidden bg-[#eee9dd] text-[#20251f]">
       <section className="chikondi-hero relative isolate flex min-h-[100svh] items-end overflow-hidden bg-[#111812] text-[#f4efe4] sm:items-center">
         <div className="hero-photo-grid" aria-hidden="true">
           <div className="hero-photo hero-photo--one"><img src="https://images.unsplash.com/photo-1746211991067-9877b87601a3?auto=format&fit=crop&w=1800&q=90" alt="" /></div>
