@@ -1,44 +1,37 @@
-import Link from "next/link";
-
-const pillars = [
-  { number: "01", title: "Music & Artist Portfolio", detail: "A home for original music, listening links, releases and the stories behind the sound.", href: "/music", action: "Explore the music" },
-  { number: "02", title: "Scriptwriting & Film", detail: "Screenwriting, story development and film projects presented with respect for creative ownership.", href: "/writing", action: "Explore the writing" },
-  { number: "03", title: "Music & Video Production", detail: "Creative production services, collaborations and project enquiries.", href: "/production", action: "View production" },
-  { number: "04", title: "The Story of Chikondi", detail: "Biography, creative journey, values and Rastafari identity—in his own words.", href: "/about", action: "Read the story" },
-  { number: "05", title: "Community & Orphan Support", detail: "A thoughtful space for community care, responsible support and partnership enquiries.", href: "/community", action: "Explore community" },
-  { number: "06", title: "Bookings & Inquiries", detail: "A clear route for performances, commissions, production work and collaborations.", href: "/hire", action: "Start an inquiry" },
-];
-
-export default function HomePage() {
-  return (
-    <div className="overflow-hidden bg-[#eee9dd] text-[#20251f]">
-      <section className="relative isolate min-h-[680px] overflow-hidden bg-[#171d18] text-[#f4efe4] sm:min-h-[800px]">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_78%_34%,rgba(190,151,82,.24),transparent_34%),radial-gradient(ellipse_at_12%_85%,rgba(70,104,73,.3),transparent_42%)]" />
-        <div className="absolute inset-0 -z-10 opacity-[.09] [background-image:linear-gradient(rgba(255,255,255,.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.12)_1px,transparent_1px)] [background-size:80px_80px]" />
-        <div className="mx-auto flex min-h-[680px] max-w-[1440px] flex-col justify-between px-4 pb-8 pt-8 sm:min-h-[800px] sm:px-12 sm:pb-14 sm:pt-12 lg:px-20">
-          <div className="flex flex-wrap items-center justify-between gap-2 text-[8px] font-semibold uppercase tracking-[.2em] sm:text-[9px] sm:tracking-[.3em] text-[#d2b477]">
-            <span>Independent creative platform</span><span>Music · Film · Purpose</span>
+      <section className="chikondi-hero relative isolate flex min-h-[100svh] items-end overflow-hidden bg-[#111812] text-[#f4efe4] sm:items-center">
+        <div className="hero-photo-grid" aria-hidden="true">
+          <div className="hero-photo hero-photo--one"><img src="https://images.unsplash.com/photo-1746211991067-9877b87601a3?auto=format&fit=crop&w=1800&q=90" alt="" /></div>
+          <div className="hero-photo hero-photo--two"><img src="https://images.unsplash.com/photo-1714793625539-da7478f34a43?auto=format&fit=crop&w=1500&q=90" alt="" /></div>
+          <div className="hero-photo hero-photo--three"><img src="https://images.unsplash.com/photo-1759539648807-43156d225950?auto=format&fit=crop&w=1500&q=90" alt="" /></div>
+          <div className="hero-photo hero-photo--four"><img src="https://images.unsplash.com/photo-1746211991067-9877b87601a3?auto=format&fit=crop&w=1500&q=90" alt="" /></div>
+        </div>
+        <div className="hero-vignette absolute inset-0" aria-hidden="true" />
+        <div className="absolute inset-0 opacity-[.13] [background-image:linear-gradient(rgba(255,255,255,.13)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.13)_1px,transparent_1px)] [background-size:90px_90px]" aria-hidden="true" />
+        <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-[1600px] flex-col justify-between px-5 pb-7 pt-7 sm:px-10 sm:pb-10 sm:pt-9 lg:px-16 xl:px-20">
+          <div className="flex items-center justify-between gap-3 text-[8px] font-bold uppercase tracking-[.22em] text-[#e2c88e] sm:text-[10px] sm:tracking-[.3em]">
+            <span className="flex items-center gap-3"><span className="h-px w-7 bg-[#d2b477] sm:w-10" /> Independent artist · Malawi</span><span>Music · Film · Purpose</span>
           </div>
-          <div className="grid items-end gap-12 lg:grid-cols-[1.2fr_.8fr]">
-            <div className="max-w-4xl">
-              <p className="mb-7 flex items-center gap-3 text-[9px] font-bold uppercase tracking-[.2em] sm:text-[10px] sm:tracking-[.34em] text-[#d2b477]"><span className="h-px w-10 bg-[#d2b477]" /> Art with roots. Stories with meaning.</p>
-              <h1 className="font-serif text-[clamp(3.1rem,14vw,11.5rem)] leading-[.76] tracking-[-.075em]">CHIKONDI<span className="text-[#c9a96c]">.</span></h1>
-              <p className="mt-7 max-w-xl text-sm leading-7 sm:mt-10 sm:text-base sm:leading-8 text-[#d7d3c8] sm:text-lg">A creative world shaped by music, storytelling, production and a commitment to community.</p>
-              <div className="mt-7 flex flex-wrap gap-3 sm:mt-9">
-                <Link href="/music" className="bg-[#c9a96c] px-5 py-3.5 text-[9px] sm:px-7 sm:py-4 sm:text-[10px] font-bold uppercase tracking-[.22em] text-[#171d18] transition hover:bg-[#e1c58e]">Enter the world <span aria-hidden="true">↗</span></Link>
-                <Link href="/hire" className="border border-white/30 px-7 py-4 text-[10px] font-bold uppercase tracking-[.22em] transition hover:border-[#c9a96c] hover:text-[#c9a96c]">Work together</Link>
+          <div className="grid items-end gap-10 py-16 sm:py-20 lg:grid-cols-[1.25fr_.75fr]">
+            <div className="max-w-5xl">
+              <p className="mb-6 inline-flex items-center gap-3 text-[9px] font-bold uppercase tracking-[.25em] text-[#e2c88e] sm:mb-8 sm:text-[10px] sm:tracking-[.34em]"><span className="h-px w-8 bg-[#d2b477]" /> Art with roots. Stories with meaning.</p>
+              <h1 className="font-serif text-[clamp(4.2rem,15vw,13rem)] leading-[.72] tracking-[-.085em] drop-shadow-[0_8px_35px_rgba(0,0,0,.35)]">CHIKONDI<span className="text-[#d1ad69]">.</span></h1>
+              <p className="mt-8 max-w-xl text-sm leading-7 text-white/85 drop-shadow sm:mt-10 sm:text-lg sm:leading-8">A creative world shaped by music, storytelling, production and a commitment to community.</p>
+              <div className="mt-8 flex flex-wrap gap-3 sm:mt-10">
+                <Link href="/music" className="group inline-flex items-center gap-4 bg-[#c9a96c] px-6 py-4 text-[9px] font-bold uppercase tracking-[.2em] text-[#171d18] shadow-xl transition duration-300 hover:-translate-y-1 hover:bg-[#e1c58e] sm:px-8 sm:text-[10px]">Explore the music <span className="text-base transition group-hover:translate-x-1">↗</span></Link>
+                <Link href="/hire" className="inline-flex items-center gap-4 border border-white/55 bg-black/15 px-6 py-4 text-[9px] font-bold uppercase tracking-[.2em] text-white backdrop-blur-md transition duration-300 hover:border-[#d2b477] hover:bg-white/10 sm:px-8 sm:text-[10px]">Bookings & inquiries <span className="text-base">↗</span></Link>
               </div>
             </div>
-            <div className="relative flex min-h-[320px] items-end justify-end lg:min-h-[390px]">
-              <div className="absolute bottom-0 right-0 h-[390px] w-[82%] border border-[#c9a96c]/40" />
-              <div className="absolute bottom-6 right-0 flex h-[280px] w-[92%] sm:bottom-8 sm:right-8 sm:h-[330px] sm:w-[82%] items-center justify-center bg-[linear-gradient(145deg,#394838,#202a21_58%,#171d18)]">
-                <div className="absolute inset-5 border border-[#d2b477]/30" />
-                <div className="text-center"><img src="https://images.unsplash.com/photo-1746211991067-9877b87601a3?auto=format&fit=crop&w=1600&q=85" alt="Temporary Rastafarian music-gathering stock photograph; not Chikondi" className="absolute inset-0 h-full w-full object-cover opacity-75" /><div className="absolute inset-0 bg-gradient-to-t from-[#171d18]/90 via-transparent to-[#171d18]/10" /><div className="absolute bottom-8 left-8 right-8"><p className="text-[9px] font-bold uppercase tracking-[.28em] text-[#e8dfca]">Visual direction · Stock image</p><p className="mt-2 font-serif text-3xl text-white">The artist at work.</p></div></div>
+            <div className="hidden justify-self-end lg:block">
+              <div className="max-w-[260px] border-l border-[#d2b477]/80 pl-5">
+                <p className="text-[9px] font-bold uppercase tracking-[.28em] text-[#e2c88e]">The creative spirit</p>
+                <p className="mt-4 font-serif text-3xl leading-tight text-white">Rooted in culture.<br /><em className="text-[#d2b477]">Moving forward.</em></p>
+                <p className="mt-4 text-xs leading-6 text-white/70">Music, visual storytelling and a wider sense of purpose.</p>
               </div>
-              <p className="absolute bottom-0 left-0 max-w-[160px] text-[9px] uppercase leading-5 tracking-[.2em] text-[#bdb9ad]">An evolving portrait of an independent creative voice.</p>
             </div>
           </div>
-          <div className="flex items-center justify-between border-t border-white/15 pt-5 text-[9px] uppercase tracking-[.24em] text-[#bdb9ad]"><span>Official artist platform</span><span>Explore below ↓</span><span className="hidden sm:block">Malawi · Beyond</span></div>
+          <div className="flex items-end justify-between gap-4 border-t border-white/30 pt-5 text-[8px] font-semibold uppercase tracking-[.2em] text-white/75 sm:text-[9px] sm:tracking-[.25em]">
+            <span>Official artist platform</span><span className="text-[#e2c88e]">A visual journey · Scroll to explore ↓</span><span className="hidden sm:block">Malawi · Beyond</span>
+          </div>
         </div>
       </section>
 
