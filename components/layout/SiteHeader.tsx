@@ -6,8 +6,15 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 export default function SiteHeader() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);\n  const [logoOpen, setLogoOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [logoOpen, setLogoOpen] = useState(false);
+  const [headerVariant, setHeaderVariant] = useState("rasta-header-one");
   const pathname = usePathname();
+
+  useEffect(() => {
+    const variants = ["rasta-header-one", "rasta-header-two", "rasta-header-three"];
+    setHeaderVariant(variants[Math.floor(Math.random() * variants.length)]);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
