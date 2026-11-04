@@ -9,8 +9,8 @@ export default function MusicPage() {
           <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[.98] tracking-tight sm:text-7xl lg:text-8xl">Music that<br /><em className="text-[#c9a96c]">speaks from the roots.</em></h1>
           <p className="mt-8 max-w-2xl text-base leading-8 text-[#d7d3c8]">A dedicated space for Chikondi’s music, releases, listening links and the ideas behind each body of work.</p>
           <figure className="mt-12 overflow-hidden rounded-sm">
-            <img src="https://images.unsplash.com/photo-1729184224006-bd5d8556050e?auto=format&fit=crop&w=1800&q=85" alt="Temporary sample recording studio photograph; not Chikondi" className="aspect-[16/9] w-full object-cover sm:aspect-[21/9]" />
-            <figcaption className="mt-2 text-[9px] uppercase tracking-[.18em] text-[#c9a96c]">Temporary sample studio photography · Jon Chambers / Unsplash · Not Chikondi</figcaption>
+            <img src="https://images.unsplash.com/photo-1746211991067-9877b87601a3?auto=format&fit=crop&w=1800&q=85" alt="Temporary Rastafarian music-gathering stock photograph; not Chikondi" className="aspect-[16/9] w-full object-cover sm:aspect-[21/9]" />
+            <figcaption className="mt-2 text-[9px] uppercase tracking-[.18em] text-[#c9a96c]">Temporary Rastafarian music photography · Unsplash · Not Chikondi</figcaption>
           </figure>
         </div>
       </section>
