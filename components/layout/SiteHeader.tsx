@@ -27,6 +27,7 @@ export default function SiteHeader() {
   }, [mobileMenuOpen]);
 
   const navLinks = [
+    { href: "/play", label: "Listen / Watch" },
     { href: "/music", label: "Music" },
     { href: "/writing", label: "Film & Writing" },
     { href: "/production", label: "Production" },
