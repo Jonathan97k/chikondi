@@ -60,7 +60,7 @@ export default function SiteHeader() {
             </svg>
           </span>
           <span className="min-w-0">
-            <span className="block whitespace-nowrap text-base font-black tracking-[0.08em] text-[#171d18] sm:text-xl">TOKHA</span>
+            <span className="block whitespace-nowrap text-sm font-black tracking-[0.08em] text-[#171d18] sm:text-lg">TOKHA CREATIONS</span>
             <span className="hidden text-[9px] font-bold uppercase tracking-[0.19em] text-[#171d18] sm:block">Creative Arts · Music · Film</span>
           </span>
         </button>
@@ -145,7 +145,7 @@ export default function SiteHeader() {
               <path d="m57 48-16-13m49 10 19-13m-60 48-18-5m61 49 17 12" stroke="#F2C230" strokeWidth="5" strokeLinecap="round" />
             </svg>
             <div className="mt-5 text-center">
-              <div className="text-3xl font-black tracking-[0.18em] text-[#F4EFE4] sm:text-5xl">TOKHA</div>
+              <div className="text-2xl font-black tracking-[0.12em] text-[#F4EFE4] sm:text-4xl">TOKHA CREATIONS</div>
               <div className="mt-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#F2C230] sm:text-sm">Creative Arts · Music · Film</div>
             </div>
           </div>
