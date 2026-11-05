@@ -10,12 +10,12 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   title: "TOKHA CREATIONS | Music, Film & Creative Production",
-  description: "The creative home of Chikondi: music, films, writing, production and community work.",
+  description: "TOKHA CREATIONS — music, film, writing and creative production.",
   manifest: "/manifest.json",
   icons: { icon: "/favicon.ico", shortcut: "/favicon.svg", apple: "/apple-touch-icon.png" },
   openGraph: {
     title: "TOKHA CREATIONS | Music, Film & Creative Production",
-    description: "Explore the music, films, writing and creative work of Chikondi.",
+    description: "Explore TOKHA CREATIONS: music, film, writing and creative production.",
     siteName: "TOKHA CREATIONS",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "TOKHA CREATIONS" }],
     locale: "en_US",
