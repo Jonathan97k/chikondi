@@ -36,7 +36,7 @@ export default function SiteFooter() {
         </div>
         <div className="border-t border-[#E8E4D9]/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#E8E4D9]/60">
           <p>© {currentYear} TOKHA CREATIONS. All rights reserved.</p>
-          <p className="mt-2 sm:mt-0">Created and developed by Kelnix.</p>
+          <p className="mt-2 sm:mt-0">Developed by Kelnix.</p>
         </div>
       </div>
     </footer>
