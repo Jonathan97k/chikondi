@@ -4,7 +4,7 @@ const pillars = [
   { number: "01", title: "Music", detail: "Original music, releases and the stories behind the sound.", href: "/music", action: "Explore music" },
   { number: "02", title: "Film & Writing", detail: "Screenwriting, story development and visual storytelling.", href: "/writing", action: "Explore stories" },
   { number: "03", title: "Production", detail: "Music, video and creative production collaborations.", href: "/production", action: "View production" },
-  { number: "04", title: "About Chikondi", detail: "The creative journey, values and Rastafari identity—in his own words.", href: "/about", action: "Read the story" },
+  { number: "04", title: "About the creator", detail: "The creative journey, values and Rastafari identity—in his own words.", href: "/about", action: "Read the story" },
   { number: "05", title: "Community", detail: "Community care, responsible support and partnership enquiries.", href: "/community", action: "Learn more" },
   { number: "06", title: "Bookings", detail: "Performances, commissions, production work and collaborations.", href: "/hire", action: "Make an inquiry" },
 ];
@@ -30,7 +30,7 @@ export default function HomePage() {
           <div className="grid flex-1 items-center gap-8 py-14 lg:grid-cols-[1.05fr_.95fr]">
             <div className="max-w-3xl self-center">
               <p className="chikondi-script mb-2 text-3xl text-[#f5c400] sm:text-5xl">Welcome to the world of</p>
-              <h1 className="font-serif text-[clamp(4.8rem,13vw,11rem)] font-black leading-[.78] tracking-[-.075em] text-[#fffaf0] drop-shadow-[0_8px_35px_rgba(0,0,0,.55)]">CHIKONDI</h1>
+              <h1 className="font-serif text-[clamp(4.8rem,13vw,11rem)] font-black leading-[.78] tracking-[-.075em] text-[#fffaf0] drop-shadow-[0_8px_35px_rgba(0,0,0,.55)]">TOKHA CREATIONS</h1>
               <p className="mt-6 text-[10px] font-bold uppercase tracking-[.34em] text-white sm:text-sm">Reggae <span className="px-2 text-[#f5c400]">•</span> Rastafari <span className="px-2 text-[#f5c400]">•</span> Culture</p>
               <div className="mt-5 h-[5px] w-64 max-w-full bg-gradient-to-r from-[#e31b23] via-[#f5c400] to-[#168b42]" />
               <p className="mt-6 max-w-xl font-serif text-xl italic text-[#f5c400] sm:text-3xl">Music for peace, love and a better tomorrow.</p>
@@ -51,7 +51,7 @@ export default function HomePage() {
             <span className="text-[9px] font-semibold uppercase tracking-[.24em] text-white/70">Artist · Writer · Producer</span>
             <Link href="/music" className="flex items-center gap-4 rounded-full border border-white/25 bg-black/50 px-4 py-3 backdrop-blur-md transition hover:border-[#f5c400] sm:min-w-[300px]">
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f5c400] text-lg text-[#10160f]">♫</span>
-              <span className="flex-1"><span className="block text-xs font-bold text-white">Discover Chikondi’s music</span><span className="block text-[10px] text-white/60">Explore releases and listening links</span></span><span className="text-[#f5c400]">↗</span>
+              <span className="flex-1"><span className="block text-xs font-bold text-white">Discover the music</span><span className="block text-[10px] text-white/60">Explore releases and listening links</span></span><span className="text-[#f5c400]">↗</span>
             </Link>
             <span className="text-[9px] font-semibold uppercase tracking-[.24em] text-white/70">Malawi · Beyond</span>
           </div>
