@@ -31,7 +31,7 @@ export default function PlayPage() {
         <div className="absolute inset-0 opacity-25"><img src="https://images.unsplash.com/photo-1746211991067-9877b87601a3?auto=format&fit=crop&w=1800&q=85" alt="" className="h-full w-full object-cover" /></div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#080e09] via-[#080e09]/90 to-[#080e09]/55" />
         <div className="relative mx-auto max-w-[1400px]">
-          <p className="text-[10px] font-bold uppercase tracking-[.32em] text-[#f5c400]">The Chikondi media room</p>
+          <p className="text-[10px] font-bold uppercase tracking-[.32em] text-[#f5c400]">TOKHA CREATIONS media room</p>
           <h1 className="mt-5 max-w-4xl font-serif text-5xl leading-[.98] sm:text-7xl lg:text-8xl">Press play.<br/><em className="text-[#f5c400]">Feel the story.</em></h1>
           <p className="mt-6 max-w-2xl text-sm leading-7 text-white/75 sm:text-base">Listen to music, watch music videos and explore films and visual stories. This preview shows how Chikondi’s media library will work once his approved files are added.</p>
           <div className="mt-8 inline-flex rounded-full border border-[#f5c400]/40 bg-black/30 p-1">
