@@ -54,14 +54,14 @@ export default function PlayPage() {
               </div>
             </div>
             <div className="p-6 sm:p-8">
-              <div className="flex items-center justify-between gap-4"><div><p className="text-sm font-bold">{track.title}</p><p className="mt-1 text-xs text-white/50">{track.type} · Chikondi</p></div><span className="text-xs tabular-nums text-white/50">{track.duration}</span></div>
+              <div className="flex items-center justify-between gap-4"><div><p className="text-sm font-bold">{track.title}</p><p className="mt-1 text-xs text-white/50">{track.type} · TOKHA CREATIONS</p></div><span className="text-xs tabular-nums text-white/50">{track.duration}</span></div>
               <div className="mt-6 h-1.5 rounded-full bg-white/10"><div className="h-full w-0 rounded-full bg-[#f5c400]" /></div>
               <div className="mt-5 flex items-center justify-between text-[10px] text-white/40"><span>00:00</span><span>Audio file not uploaded</span></div>
               <button disabled className="mt-6 w-full cursor-not-allowed rounded-full bg-white/10 px-5 py-4 text-xs font-bold uppercase tracking-[.18em] text-white/40">Playback activates when audio is added</button>
             </div>
           </div>
           <div>
-            <div className="flex items-end justify-between border-b border-white/15 pb-5"><div><p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#f5c400]">Listen to Chikondi</p><h2 className="mt-3 font-serif text-4xl sm:text-5xl">The music library</h2></div><span className="text-xs text-white/40">03 sample slots</span></div>
+            <div className="flex items-end justify-between border-b border-white/15 pb-5"><div><p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#f5c400]">Listen to TOKHA CREATIONS</p><h2 className="mt-3 font-serif text-4xl sm:text-5xl">The music library</h2></div><span className="text-xs text-white/40">03 sample slots</span></div>
             <div className="mt-5 space-y-3">{tracks.map((item, index) => <button key={item.title} onClick={() => setSelectedTrack(index)} className={`flex w-full items-center gap-4 rounded-xl border p-3 text-left transition sm:p-4 ${selectedTrack === index ? "border-[#f5c400]/60 bg-[#f5c400]/10" : "border-white/10 bg-white/[.03] hover:bg-white/[.07]"}`}><span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-black/30"><img src={item.cover} alt="" className="h-full w-full object-cover" /></span><span className="min-w-0 flex-1"><span className="block truncate text-sm font-semibold">{item.title}</span><span className="mt-1 block text-[10px] uppercase tracking-wider text-white/45">{item.type} · Audio placeholder</span></span><span className="text-lg text-[#f5c400]">{selectedTrack === index ? "●" : "▶"}</span></button>)}</div>
             <div className="mt-8 rounded-xl border border-dashed border-[#f5c400]/40 bg-[#f5c400]/[.04] p-5"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#f5c400]">Artist catalogue setup</p><p className="mt-2 text-sm leading-6 text-white/65">Track names, cover artwork, audio files, credits and release details will replace these sample slots after Chikondi approves the website.</p></div>
           </div>
