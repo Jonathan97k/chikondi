@@ -30,7 +30,7 @@ export default function HirePage() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const inquiry = [
-      "CHIKONDI WEBSITE — INQUIRY",
+      "TOKHA CREATIONS — INQUIRY",
       `Type: ${form.inquiryType}`,
       `Name: ${form.name}`,
       `Email: ${form.email}`,
