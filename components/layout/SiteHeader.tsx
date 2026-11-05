@@ -41,11 +41,11 @@ export default function SiteHeader() {
         <button
           type="button"
           onClick={() => setLogoOpen(true)}
-          aria-label="View Chikondi logo enlarged"
+          aria-label="View TOKHA CREATIONS logo enlarged"
           className="group flex min-w-0 items-center gap-2.5 rounded-lg text-left focus:outline-none focus:ring-2 focus:ring-[#171d18] focus:ring-offset-2 focus:ring-offset-[#F2C230]"
         >
           <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-[#171d18] bg-[#171d18] shadow-lg transition-transform duration-300 group-hover:scale-105 sm:h-12 sm:w-12">
-            <svg viewBox="0 0 64 64" role="img" aria-label="Chikondi lion emblem" className="h-9 w-9 sm:h-10 sm:w-10">
+            <svg viewBox="0 0 64 64" role="img" aria-label="TOKHA CREATIONS lion emblem" className="h-9 w-9 sm:h-10 sm:w-10">
               <defs>
                 <linearGradient id="chikondiLionGold" x1="0" y1="0" x2="1" y2="1">
                   <stop offset="0%" stopColor="#F9D66B" />
@@ -60,8 +60,8 @@ export default function SiteHeader() {
             </svg>
           </span>
           <span className="min-w-0">
-            <span className="block whitespace-nowrap text-base font-black tracking-[0.08em] text-[#171d18] sm:text-xl">CHIKONDI</span>
-            <span className="hidden text-[9px] font-bold uppercase tracking-[0.19em] text-[#171d18] sm:block">Music · Art · Purpose</span>
+            <span className="block whitespace-nowrap text-base font-black tracking-[0.08em] text-[#171d18] sm:text-xl">TOKHA</span>
+            <span className="hidden text-[9px] font-bold uppercase tracking-[0.19em] text-[#171d18] sm:block">Creative Arts · Music · Film</span>
           </span>
         </button>
 
@@ -118,7 +118,7 @@ export default function SiteHeader() {
           className="fixed inset-0 z-[200] flex items-center justify-center bg-black/85 p-5 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
-          aria-label="Chikondi logo enlarged"
+          aria-label="TOKHA CREATIONS logo enlarged"
           onClick={() => setLogoOpen(false)}
         >
           <button
@@ -130,7 +130,7 @@ export default function SiteHeader() {
             <X size={24} />
           </button>
           <div className="flex max-w-[min(90vw,680px)] flex-col items-center rounded-3xl border border-[#F2C230]/40 bg-[#171d18] p-8 shadow-2xl sm:p-12" onClick={(event) => event.stopPropagation()}>
-            <svg viewBox="0 0 160 160" role="img" aria-label="Chikondi lion emblem" className="h-40 w-40 sm:h-56 sm:w-56">
+            <svg viewBox="0 0 160 160" role="img" aria-label="TOKHA CREATIONS lion emblem" className="h-40 w-40 sm:h-56 sm:w-56">
               <defs>
                 <linearGradient id="chikondiLionGoldLarge" x1="0" y1="0" x2="1" y2="1">
                   <stop offset="0%" stopColor="#F9D66B" />
@@ -145,8 +145,8 @@ export default function SiteHeader() {
               <path d="m57 48-16-13m49 10 19-13m-60 48-18-5m61 49 17 12" stroke="#F2C230" strokeWidth="5" strokeLinecap="round" />
             </svg>
             <div className="mt-5 text-center">
-              <div className="text-3xl font-black tracking-[0.18em] text-[#F4EFE4] sm:text-5xl">CHIKONDI</div>
-              <div className="mt-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#F2C230] sm:text-sm">Music · Art · Purpose</div>
+              <div className="text-3xl font-black tracking-[0.18em] text-[#F4EFE4] sm:text-5xl">TOKHA</div>
+              <div className="mt-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#F2C230] sm:text-sm">Creative Arts · Music · Film</div>
             </div>
           </div>
         </div>
