@@ -2,58 +2,36 @@ import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-16 text-[#20251F]">
-      <div className="mb-12 border-b border-[#D6D9D1] pb-8">
-        <span className="text-xs uppercase tracking-widest text-[#C9A54D] font-bold">About Chikondi</span>
-        <h1 className="text-4xl font-extrabold mt-2 mb-4">Creative Journey & Identity</h1>
-        <p className="text-lg text-[#5B6259] max-w-3xl">
-          An overview of Chikondi&apos;s professional path in music, narrative storytelling, creative production, and community care.
-        </p>
-      </div>
+    <main className="mx-auto max-w-6xl px-4 py-16 text-[#20251F] sm:px-6 lg:px-8">
+      <header className="mb-14 max-w-3xl">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#98752E]">About the movement</p>
+        <h1 className="text-4xl font-extrabold leading-tight sm:text-5xl">Art, talent, culture and youth empowerment.</h1>
+        <p className="mt-6 text-lg leading-relaxed text-[#62665D]">Tokha Creations is a movement focusing on art, talent, culture and youth empowerment.</p>
+      </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
-        <div className="md:col-span-2 space-y-6">
-          <h2 className="text-2xl font-bold">Biography & Principles</h2>
-          <p className="leading-relaxed text-[#5B6259]">
-            Chikondi is a dedicated creative professional whose work bridges music, screenwriting, and impactful community outreach. Operating under approved professional standards, his artistry is guided by Rastafari principles emphasizing truth, cultural grounding, unity, and genuine community welfare.
-          </p>
-          <p className="leading-relaxed text-[#5B6259]">
-            With years of experience refining narrative scripts, producing audio releases, and organizing grassroots care initiatives for vulnerable youth and orphans, Chikondi maintains a steadfast commitment to integrity and quality across all endeavors.
-          </p>
-
-          <h3 className="text-xl font-bold pt-4">Professional Pillars</h3>
-          <ul className="list-disc pl-5 space-y-2 text-[#5B6259]">
-            <li><strong>Music:</strong> Roots-infused audio artistry, authentic lyricism, and official distribution.</li>
-            <li><strong>Scriptwriting:</strong> Narrative screenplays, compelling loglines, and structured storytelling.</li>
-            <li><strong>Production:</strong> Professional media production, creative consultation, and project deliverables.</li>
-            <li><strong>Community Care:</strong> Transparent support programs and initiatives for orphaned children.</li>
-          </ul>
-        </div>
-
-        <div className="bg-white p-6 rounded-xl border border-[#D6D9D1] shadow-sm h-fit space-y-6">
+      <section className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr]">
+        <div className="space-y-7">
           <div>
-            <h3 className="text-sm uppercase tracking-wider text-[#C9A54D] font-bold mb-2">Quick Facts</h3>
-            <ul className="space-y-3 text-sm text-[#5B6259]">
-              <li><strong>Professional Name:</strong> Chikondi</li>
-              <li><strong>Primary Focus:</strong> Music, Writing, Production, Community</li>
-              <li><strong>Identity:</strong> Rastafari Man</li>
-              <li><strong>Contact Route:</strong> Via <Link href="/contact" className="text-[#C9A54D] underline">Contact</Link> or <Link href="/hire" className="text-[#C9A54D] underline">Hire</Link></li>
+            <h2 className="mb-3 text-2xl font-bold">Our creative focus</h2>
+            <p className="leading-relaxed text-[#62665D]">Through music, storytelling, acting and film, Tokha Creations provides a platform for creative expression and the development of artistic talent.</p>
+          </div>
+          <div>
+            <h2 className="mb-3 text-2xl font-bold">What we do</h2>
+            <ul className="space-y-3 text-[#62665D]">
+              <li><strong className="text-[#20251F]">Music production and promotion</strong> — developing and promoting music projects.</li>
+              <li><strong className="text-[#20251F]">Scriptwriting</strong> — creating stories and scripts for screen and performance.</li>
+              <li><strong className="text-[#20251F]">Acting</strong> — bringing stories and characters to life.</li>
+              <li><strong className="text-[#20251F]">Movie directing and production</strong> — shaping film projects from creative vision to production.</li>
             </ul>
           </div>
-          <div className="pt-4 border-t border-[#D6D9D1]">
-            <h3 className="text-sm uppercase tracking-wider text-[#C9A54D] font-bold mb-2">Media & Press</h3>
-            <p className="text-xs text-[#5B6259] mb-4">
-              Access approved press biographies, high-resolution imagery, and official media contact channels.
-            </p>
-            <Link
-              href="/press"
-              className="block text-center w-full py-2.5 px-4 rounded bg-[#20251F] text-[#E8E4D9] text-sm font-semibold hover:bg-[#C9A54D] hover:text-[#20251F] transition-all"
-            >
-              Visit Press Kit
-            </Link>
-          </div>
         </div>
-      </div>
-    </div>
+        <aside className="h-fit rounded-2xl border border-[#DED9CC] bg-white p-8 shadow-sm">
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-[#98752E]">Founder</p>
+          <h2 className="text-2xl font-extrabold">Chikondi Simple Chagoma</h2>
+          <p className="mt-4 text-sm leading-relaxed text-[#62665D]">Founder of Tokha Creations.</p>
+          <Link href="/contact" className="mt-7 inline-flex rounded-md bg-[#17251F] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#30473A]">Connect with us</Link>
+        </aside>
+      </section>
+    </main>
   );
 }
