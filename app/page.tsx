@@ -35,6 +35,7 @@ export default function HomePage() {
               <div className="mt-5 h-[5px] w-64 max-w-full bg-gradient-to-r from-[#e31b23] via-[#f5c400] to-[#168b42]" />
               <p className="mt-6 max-w-xl font-serif text-xl italic text-[#f5c400] sm:text-3xl">Music for peace, love and a better tomorrow.</p>
               <p className="mt-4 max-w-lg text-sm leading-7 text-white/85 sm:text-base">Reggae, consciousness and positive vibes. Music and creative storytelling that uplift, inspire and unite.</p>
+              <p className="mt-3 max-w-lg text-sm leading-7 text-white/85 sm:text-base">Tokha Creations is a movement focused on art, talent, culture and youth empowerment.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link href="/play" className="inline-flex items-center gap-3 rounded-full bg-[#f5c400] px-7 py-4 text-xs font-black uppercase tracking-wider text-[#11170f] shadow-xl transition hover:-translate-y-1 hover:bg-[#ffe05a]">▶ <span>Listen now</span></Link>
                 <Link href="/play" className="inline-flex items-center gap-3 rounded-full border border-white/80 bg-black/20 px-7 py-4 text-xs font-bold uppercase tracking-wider text-white backdrop-blur transition hover:border-[#f5c400] hover:bg-white/10">▷ <span>Watch videos</span></Link>
