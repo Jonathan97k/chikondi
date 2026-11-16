@@ -25,7 +25,7 @@ export default function SiteFooter() {
           </div>
         </div>
         <div className="mt-12 flex flex-col justify-between gap-2 border-t border-white/10 pt-6 text-xs text-[#F5F2EA]/45 sm:flex-row">
-          <p>© {new Date().getFullYear()} Tokha Creations. All rights reserved.</p>
+          <p>© Tokha Creations. All rights reserved.</p>
           <p>Art • Talent • Culture • Youth Empowerment</p>
         </div>
       </div>
