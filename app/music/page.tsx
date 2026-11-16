@@ -1,73 +1,30 @@
 import Link from "next/link";
 
 export default function MusicPage() {
-  const releases = [
-    {
-      slug: "jah-guidance",
-      title: "Jah Guidance",
-      type: "Single",
-      releaseDate: "2026",
-      summary: "A meditative roots reggae anthem reflecting on spiritual strength, endurance, and collective upliftment.",
-      genre: "Roots Reggae",
-    },
-    {
-      slug: "rising-sun",
-      title: "Rising Sun",
-      type: "EP",
-      releaseDate: "2025",
-      summary: "A 4-track collection exploring themes of cultural heritage, resilience, and community solidarity.",
-      genre: "Reggae / Dub",
-    },
-  ];
-
   return (
-    <div className="max-w-6xl mx-auto px-4 py-16 text-[#20251F]">
-      <div className="mb-12 border-b border-[#D6D9D1] pb-8">
-        <span className="text-xs uppercase tracking-widest text-[#C9A54D] font-bold">Discography</span>
-        <h1 className="text-4xl font-extrabold mt-2 mb-4">Music & Audio Releases</h1>
-        <p className="text-lg text-[#5B6259] max-w-3xl">
-          Explore official releases, track lists, credits, and authorized streaming platform links.
-        </p>
+    <main className="mx-auto max-w-6xl px-4 py-16 text-[#20251F] sm:px-6 lg:px-8">
+      <header className="mb-14 max-w-3xl">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#98752E]">Sound & expression</p>
+        <h1 className="text-4xl font-extrabold sm:text-5xl">Music Production & Promotion</h1>
+        <p className="mt-5 text-lg leading-relaxed text-[#62665D]">Tokha Creations specialises in music production and promotion, supporting creative music projects and helping artists share their work.</p>
+      </header>
+      <div className="grid gap-6 md:grid-cols-2">
+        <article className="rounded-2xl border border-[#DED9CC] bg-white p-8">
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#98752E]">Create</span>
+          <h2 className="mt-4 text-2xl font-bold">Music Production</h2>
+          <p className="mt-3 text-sm leading-relaxed text-[#62665D]">Bring your musical idea or project brief to discuss production, creative direction and the next steps.</p>
+        </article>
+        <article className="rounded-2xl border border-[#DED9CC] bg-white p-8">
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#98752E]">Share</span>
+          <h2 className="mt-4 text-2xl font-bold">Music Promotion</h2>
+          <p className="mt-3 text-sm leading-relaxed text-[#62665D]">Discuss ways to present and promote your music to listeners and audiences.</p>
+        </article>
       </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        {releases.map((release) => (
-          <div key={release.slug} className="bg-white rounded-xl p-8 border border-[#D6D9D1] shadow-sm flex flex-col justify-between">
-            <div>
-              <div className="flex justify-between items-center mb-4">
-                <span className="py-1 px-3 rounded-full bg-[#C9A54D]/20 text-[#20251F] text-xs font-semibold uppercase">
-                  {release.type}
-                </span>
-                <span className="text-xs text-[#5B6259]">{release.releaseDate}</span>
-              </div>
-              <h2 className="text-2xl font-bold mb-2 text-[#20251F]">{release.title}</h2>
-              <p className="text-xs text-[#C9A54D] font-semibold mb-4 uppercase tracking-wider">{release.genre}</p>
-              <p className="text-[#5B6259] text-sm leading-relaxed mb-6">
-                {release.summary}
-              </p>
-            </div>
-            <div className="flex items-center justify-between pt-4 border-t border-[#D6D9D1]">
-              <span className="text-xs text-[#5B6259]">Official Streaming Link</span>
-              <span className="text-xs font-semibold text-[#20251F] bg-[#E8E4D9] py-1.5 px-3 rounded">
-                Available on Approved Platforms
-              </span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="bg-[#20251F] text-[#E8E4D9] rounded-xl p-8 text-center">
-        <h3 className="text-xl font-bold mb-3 text-[#C9A54D]">Booking & Performance Inquiries</h3>
-        <p className="text-sm text-[#E8E4D9]/80 max-w-xl mx-auto mb-6">
-          Interested in live musical performances, collaborative audio production, or appearances? Submit a booking inquiry.
-        </p>
-        <Link
-          href="/hire"
-          className="inline-block py-3 px-6 rounded bg-[#C9A54D] text-[#20251F] font-bold text-sm hover:bg-[#b8933e] transition-all"
-        >
-          Submit Booking Inquiry
-        </Link>
-      </div>
-    </div>
+      <section className="mt-12 rounded-2xl bg-[#17251F] p-8 text-center text-[#F5F2EA]">
+        <h2 className="text-2xl font-bold">Ready to work on your sound?</h2>
+        <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-white/70">Get in touch to discuss a music production or promotion project.</p>
+        <Link href="/hire" className="mt-6 inline-flex rounded-md bg-[#D5B15D] px-6 py-3 text-sm font-bold text-[#17251F]">Start a music inquiry</Link>
+      </section>
+    </main>
   );
 }
