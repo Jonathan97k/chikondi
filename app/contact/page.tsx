@@ -2,49 +2,17 @@ import Link from "next/link";
 
 export default function ContactPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-16 text-[#20251F]">
-      <div className="mb-12 border-b border-[#D6D9D1] pb-8">
-        <span className="text-xs uppercase tracking-widest text-[#C9A54D] font-bold">Contact Channels</span>
-        <h1 className="text-4xl font-extrabold mt-2 mb-4">Get in Touch</h1>
-        <p className="text-lg text-[#5B6259]">
-          Distinct contact routes for general inquiries, business bookings, press, and community partnerships.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
-        <div className="bg-white p-8 rounded-xl border border-[#D6D9D1] shadow-sm space-y-3">
-          <h3 className="text-lg font-bold text-[#20251F]">General & Business</h3>
-          <p className="text-sm text-[#5B6259]">
-            For general professional inquiries, music bookings, and production requests.
-          </p>
-          <Link href="/hire" className="inline-block pt-2 text-sm font-semibold text-[#C9A54D] hover:underline">
-            Use Hire & Booking Form →
-          </Link>
-        </div>
-
-        <div className="bg-white p-8 rounded-xl border border-[#D6D9D1] shadow-sm space-y-3">
-          <h3 className="text-lg font-bold text-[#20251F]">Press & Media</h3>
-          <p className="text-sm text-[#5B6259]">
-            For interviews, press bios, media kits, and promotional requests.
-          </p>
-          <Link href="/press" className="inline-block pt-2 text-sm font-semibold text-[#C9A54D] hover:underline">
-            Visit Press Kit →
-          </Link>
-        </div>
-      </div>
-
-      <div className="bg-[#20251F] text-[#E8E4D9] rounded-xl p-8 text-center">
-        <h3 className="text-xl font-bold mb-2 text-[#C9A54D]">Direct Inquiry Route</h3>
-        <p className="text-sm text-[#E8E4D9]/80 mb-6">
-          All submissions are reviewed securely by our administrative team.
-        </p>
-        <Link
-          href="/hire"
-          className="inline-block py-3 px-6 rounded bg-[#C9A54D] text-[#20251F] font-bold text-sm hover:bg-[#b8933e] transition-all"
-        >
-          Open Inquiry Form
-        </Link>
-      </div>
-    </div>
+    <main className="mx-auto max-w-5xl px-4 py-16 text-[#20251F] sm:px-6 lg:px-8">
+      <header className="mb-14 max-w-3xl">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#98752E]">Get in touch</p>
+        <h1 className="text-4xl font-extrabold sm:text-5xl">Let's create something meaningful.</h1>
+        <p className="mt-5 text-lg leading-relaxed text-[#62665D]">For music, scriptwriting, acting, movie direction or production enquiries, send us a project brief.</p>
+      </header>
+      <section className="rounded-2xl bg-[#17251F] p-8 text-[#F5F2EA] sm:p-10">
+        <h2 className="text-2xl font-bold">Start a conversation</h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/70">Use the inquiry form to tell us who you are, what you are working on and how Tokha Creations could collaborate with you.</p>
+        <Link href="/hire" className="mt-7 inline-flex rounded-md bg-[#D5B15D] px-6 py-3 text-sm font-bold text-[#17251F] hover:bg-[#E6C879]">Open inquiry form</Link>
+      </section>
+    </main>
   );
 }
