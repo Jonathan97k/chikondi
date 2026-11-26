@@ -253,3 +253,47 @@ input, select, textarea {
  .chikondi-hero-tint {background:linear-gradient(90deg,rgba(3,10,6,.76),rgba(3,10,6,.35)),linear-gradient(0deg,rgba(3,10,6,.92),rgba(3,10,6,.18) 75%)}
 }
 @media(prefers-reduced-motion:reduce) { .chikondi-hero-image img {animation:none!important} }
+
+
+/* TOKHA About page: slow, seamless photo crossfade while preserving full images. */
+.tokha-about-slideshow {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  min-height: 220px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.tokha-about-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: tokha-photo-crossfade 12s ease-in-out infinite;
+}
+.tokha-about-slide img {
+  object-fit: contain;
+}
+.tokha-about-slide-first { animation-delay: 0s; }
+.tokha-about-slide-second { animation-delay: 6s; }
+@keyframes tokha-photo-crossfade {
+  0%, 8% { opacity: 0; }
+  14%, 44% { opacity: 1; }
+  52%, 100% { opacity: 0; }
+}
+
+/* Slightly larger official logo with a gentle, continuous vibration. */
+.tokha-logo-vibrate {
+  transform-origin: 50% 55%;
+  animation: tokha-logo-vibration 1.35s ease-in-out infinite;
+}
+@keyframes tokha-logo-vibration {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  20% { transform: translate3d(.45px, -.25px, 0) rotate(.18deg); }
+  40% { transform: translate3d(-.45px, .2px, 0) rotate(-.18deg); }
+  60% { transform: translate3d(.3px, .15px, 0) rotate(.12deg); }
+  80% { transform: translate3d(-.3px, -.15px, 0) rotate(-.12deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tokha-about-slide, .tokha-logo-vibrate { animation: none !important; }
+  .tokha-about-slide-first { opacity: 1; }
+  .tokha-about-slide-second { display: none; }
+}
