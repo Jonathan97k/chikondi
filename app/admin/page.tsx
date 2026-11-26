@@ -5,8 +5,6 @@ const PROJECT_ID = "6b08286d00341553344a";
 const ENDPOINT = "https://fra.cloud.appwrite.io/v1";
 const COOKIE_NAME = "tokha_admin_session";
 
-export const dynamic = "force-dynamic";
-
 export default async function AdminPage() {
   const cookieStore = await cookies();
   const sessionSecret = cookieStore.get(COOKIE_NAME)?.value;
