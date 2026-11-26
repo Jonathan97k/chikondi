@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import YouTubeChannelVideos from "@/components/media/YouTubeChannelVideos";
 
 type Track = { title: string; type: string; duration: string; src: string | null; cover: string };
 type Film = { title: string; category: string; year: string; src: string | null; poster: string; description: string };
@@ -68,13 +69,7 @@ export default function PlayPage() {
         </section>
       ) : (
         <section className="mx-auto max-w-[1400px] px-5 py-12 sm:px-10 lg:px-16 lg:py-16">
-          <div className="grid gap-8 lg:grid-cols-[1.35fr_.65fr]">
-            <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#141d15]">
-              <div className="relative aspect-video bg-black"><img src={film.poster} alt="Temporary sample video thumbnail, not an official Chikondi film" className="h-full w-full object-cover opacity-55" /><div className="absolute inset-0 flex flex-col items-center justify-center bg-black/25 p-6 text-center"><span className="flex h-20 w-20 items-center justify-center rounded-full border border-[#f5c400] bg-[#f5c400] text-3xl text-[#11170f]">▶</span><h2 className="mt-5 font-serif text-3xl sm:text-4xl">{film.title}</h2><p className="mt-2 text-[10px] uppercase tracking-[.2em] text-white/65">Video file pending</p></div></div>
-              <div className="p-6 sm:p-8"><div className="flex flex-wrap items-center justify-between gap-3"><div><p className="text-[10px] font-bold uppercase tracking-[.2em] text-[#f5c400]">{film.category}</p><h3 className="mt-2 font-serif text-2xl">{film.title}</h3></div><span className="rounded-full border border-white/15 px-3 py-2 text-[10px] text-white/50">{film.year}</span></div><p className="mt-4 text-sm leading-7 text-white/60">{film.description}</p><p className="mt-5 rounded-lg bg-white/[.05] p-4 text-xs leading-6 text-white/45">The video player will become active when the approved video file or official streaming embed is connected.</p></div>
-            </div>
-            <div><p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#f5c400]">Watch & explore</p><h2 className="mt-3 font-serif text-4xl">Films and videos</h2><div className="mt-6 space-y-3">{films.map((item,index)=><button key={item.title} onClick={()=>setSelectedFilm(index)} className={`w-full overflow-hidden rounded-xl border text-left transition ${selectedFilm===index?"border-[#f5c400]/60 bg-[#f5c400]/10":"border-white/10 bg-white/[.03] hover:bg-white/[.07]"}`}><div className="flex gap-3 p-3"><img src={item.poster} alt="" className="h-20 w-28 rounded-lg object-cover" /><span className="min-w-0 self-center"><span className="block text-sm font-semibold">{item.title}</span><span className="mt-1 block text-[10px] uppercase tracking-wider text-white/45">{item.category}</span><span className="mt-2 block text-[10px] text-[#f5c400]">{item.year}</span></span></div></button>)}</div></div>
-          </div>
+          <YouTubeChannelVideos />
         </section>
       )}
 
