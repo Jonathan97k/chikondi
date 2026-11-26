@@ -8,6 +8,7 @@ export default function AdminLoginPage() {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [resetRequested, setResetRequested] = useState(false);
 
   async function signIn(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -24,6 +25,30 @@ export default function AdminLoginPage() {
       window.location.assign("/admin");
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Unable to sign in. Check your details and try again.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function requestPasswordReset() {
+    if (!email.trim()) {
+      setMessage("Enter your authorised email address first, then choose Forgot password.");
+      return;
+    }
+    setLoading(true);
+    setMessage("");
+    try {
+      const response = await fetch("/api/admin/recovery", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "Could not request a password reset.");
+      setResetRequested(true);
+      setMessage(data.message || "If the account exists, reset instructions will be sent.");
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Could not request a password reset.");
     } finally {
       setLoading(false);
     }
@@ -48,8 +73,9 @@ export default function AdminLoginPage() {
           </div>
           <button type="submit" disabled={loading} className="w-full rounded-lg bg-[#20251F] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#B18B35] disabled:opacity-60">{loading ? "Signing in…" : "Sign in to CMS"}</button>
         </form>
+        <button type="button" onClick={requestPasswordReset} disabled={loading || resetRequested} className="text-sm font-semibold text-[#5B6259] underline underline-offset-4 disabled:opacity-60">Forgot password?</button>
         {message && <p role="alert" className="rounded-lg border border-[#E5C9C5] bg-[#FFF8F6] p-3 text-sm leading-6 text-[#8A3328]">{message}</p>}
-        <p className="text-xs leading-5 text-[#777D73]">Only the TOKHA developer and owner accounts are authorised. If you need a password reset, contact the developer.</p>
+        <p className="text-xs leading-5 text-[#777D73]">Only the TOKHA developer and owner accounts are authorised. Use “Forgot password?” to request a secure reset email.</p>
         <Link href="/" className="inline-block text-sm font-semibold text-[#5B6259] underline underline-offset-4">Return to website</Link>
       </section>
     </main>
