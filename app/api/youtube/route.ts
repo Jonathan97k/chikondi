@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export const dynamic = "force-dynamic";
-
 type YouTubePlaylistResponse = {
   items?: Array<{
     snippet?: {
