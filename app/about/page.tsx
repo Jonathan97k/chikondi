@@ -7,9 +7,9 @@ export default function AboutPage() {
       <section className="bg-[#171d18] px-6 py-20 text-[#f4efe4] sm:px-12 lg:px-20 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#c9a96c]">Art · Talent · Culture</p>
-          <h1 className="mt-6 font-serif text-5xl leading-[.98] sm:text-7xl lg:text-8xl">Meet<br /><em className="text-[#c9a96c]">TOKHA CREATIONS.</em></h1>
-          <p className="mt-8 max-w-2xl text-base leading-8 text-[#d7d3c8]">A creative movement focused on art, talent, culture and youth empowerment.</p>
-          <figure className="mt-12 w-full bg-[#242b23] p-0">
+          <h1 className="mt-4 font-serif text-4xl leading-[.98] sm:text-5xl lg:text-6xl">Meet<br /><em className="text-[#c9a96c]">TOKHA CREATIONS.</em></h1>
+          <p className="mt-6 max-w-2xl text-base leading-8 text-[#d7d3c8]">A creative movement focused on art, talent, culture and youth empowerment.</p>
+          <figure className="mt-8 w-full bg-[#242b23] p-0">
             <Image src="/images/tokha-creative-team-wide.webp" alt="TOKHA CREATIONS creative team together" width={1536} height={864} priority sizes="100vw" style={{ width: "100%", height: "auto", objectFit: "contain", display: "block" }} className="!h-auto w-full max-w-none object-contain" />
           </figure>
         </div>
