@@ -4,12 +4,15 @@ The Watch tab at `/play` reads the official channel's uploads playlist through a
 
 ## Vercel environment variables
 
-Set these on the Vercel project that serves the public Tokha website:
+The official channel URL supplied by founder Chikondi Simple Chagoma is already configured in the Vercel project:
 
-- `YOUTUBE_CHANNEL_URL`: the official channel URL (for example, a `youtube.com/@handle` or `youtube.com/channel/UC...` link).
-- `YOUTUBE_API_KEY`: a Google Cloud API key with YouTube Data API v3 enabled. Keep this as a server-only variable; do not prefix it with `NEXT_PUBLIC_`.
+- `YOUTUBE_CHANNEL_URL=https://youtube.com/@simplechicco`
 
-Redeploy after adding the variables. The API key is used only by `app/api/youtube/route.ts`; it is never returned to the browser.
+One additional variable is required:
+
+- `YOUTUBE_API_KEY`: a Google Cloud API key with YouTube Data API v3 enabled. Add it in the Vercel project environment settings for Production, Preview, and Development. Keep it server-only; do not prefix it with `NEXT_PUBLIC_` and do not commit it to the repository.
+
+Redeploy after adding the API key. The key is used only by `app/api/youtube/route.ts`; it is never returned to the browser.
 
 ## Behaviour
 
@@ -20,6 +23,6 @@ Redeploy after adding the variables. The API key is used only by `app/api/youtub
 - Only videos accessible through the channel's public uploads playlist can be listed. Private, deleted, age-restricted, region-restricted, or embedding-disabled videos may not play for every visitor.
 - YouTube controls its player, advertising, availability, and embedding policies.
 
-## Setup still required
+## Current setup status
 
-The official channel URL and API key must be added as Vercel environment variables before the live library can populate. No channel URL or credentials have been assumed.
+The channel URL is configured. The library remains in its unconfigured state until a valid `YOUTUBE_API_KEY` is added and a preview deployment verifies real channel data and playback.
