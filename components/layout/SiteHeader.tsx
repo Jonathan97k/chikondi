@@ -33,14 +33,10 @@ export default function SiteHeader() {
 
   return (
     <header className="rasta-site-header sticky top-0 z-50 text-[#171d18] shadow-md">
-      <div className="mx-auto flex h-16 w-full max-w-[1440px] items-center justify-between gap-3 px-4 sm:h-20 sm:px-8 lg:px-20">
-        <button type="button" onClick={() => setLogoOpen(true)} aria-label="View TOKHA CREATIONS official logo" className="group flex min-w-0 items-center gap-3 rounded-lg text-left focus:outline-none focus:ring-2 focus:ring-[#171d18] focus:ring-offset-2 focus:ring-offset-[#F2C230]">
-          <span className="flex h-11 w-14 shrink-0 items-center justify-center sm:h-14 sm:w-[4.5rem]">
-            <Image src="/images/tokha-creations-logo.webp" alt="TOKHA CREATIONS" width={180} height={120} priority className="max-h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:max-h-14" />
-          </span>
-          <span className="min-w-0">
-            <span className="block whitespace-nowrap text-sm font-black tracking-[0.08em] text-[#171d18] sm:text-lg">TOKHA CREATIONS</span>
-            <span className="hidden text-[9px] font-bold uppercase tracking-[0.19em] text-[#171d18] sm:block">Creative Arts · Music · Film</span>
+      <div className="mx-auto flex h-20 w-full max-w-[1440px] items-center justify-between gap-3 px-4 sm:h-24 sm:px-8 lg:px-20">
+        <button type="button" onClick={() => setLogoOpen(true)} aria-label="View TOKHA CREATIONS official logo" className="group flex min-w-0 items-center rounded-lg text-left focus:outline-none focus:ring-2 focus:ring-[#171d18] focus:ring-offset-2 focus:ring-offset-[#F2C230]">
+          <span className="flex h-16 w-28 shrink-0 items-center justify-start sm:h-20 sm:w-40">
+            <Image src="/images/tokha-creations-logo.webp" alt="TOKHA CREATIONS official logo" width={320} height={214} priority className="max-h-16 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-105 sm:max-h-20" />
           </span>
         </button>
 
@@ -70,7 +66,7 @@ export default function SiteHeader() {
         </div>
       </div>}
 
-      {mobileMenuOpen && <div id="mobile-menu" className="fixed inset-x-0 bottom-0 top-16 z-[100] flex flex-col justify-between overflow-y-auto bg-[#20251F] p-5 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-2xl sm:top-20 sm:p-8 lg:hidden">
+      {mobileMenuOpen && <div id="mobile-menu" className="fixed inset-x-0 bottom-0 top-20 z-[100] flex flex-col justify-between overflow-y-auto bg-[#20251F] p-5 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-2xl sm:top-24 sm:p-8 lg:hidden">
         <nav aria-label="Mobile navigation" className="flex flex-col gap-3 py-4">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
