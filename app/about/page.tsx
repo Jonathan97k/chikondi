@@ -9,8 +9,14 @@ export default function AboutPage() {
           <p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#c9a96c]">Art · Talent · Culture</p>
           <h1 className="mt-4 font-serif text-4xl leading-[.98] sm:text-5xl lg:text-6xl">Meet<br /><em className="text-[#c9a96c]">TOKHA CREATIONS.</em></h1>
           <p className="mt-6 max-w-2xl text-base leading-8 text-[#d7d3c8]">A creative movement focused on art, talent, culture and youth empowerment.</p>
-          <figure className="mt-8 w-full bg-[#242b23] p-0">
-            <Image src="/images/tokha-creative-team-wide.webp" alt="TOKHA CREATIONS creative team together" width={1536} height={864} priority sizes="100vw" style={{ width: "100%", height: "auto", objectFit: "contain", display: "block" }} className="!h-auto w-full max-w-none object-contain" />
+          <figure className="tokha-about-slideshow mt-8 w-full bg-[#242b23]" aria-label="TOKHA CREATIONS team photo slideshow">
+            <div className="tokha-about-slide tokha-about-slide-first">
+              <Image src="/images/tokha-creative-team-wide.webp" alt="TOKHA CREATIONS creative team together" fill priority sizes="100vw" className="object-contain" />
+            </div>
+            <div className="tokha-about-slide tokha-about-slide-second">
+              <Image src="/images/tokha-creative-team-portrait.webp" alt="TOKHA CREATIONS team portrait" fill sizes="100vw" className="object-contain" />
+            </div>
+            <figcaption className="sr-only">Team photographs change automatically every few seconds.</figcaption>
           </figure>
         </div>
       </section>
