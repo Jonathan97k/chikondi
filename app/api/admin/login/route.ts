@@ -24,7 +24,6 @@ export async function POST(request: Request) {
         userId,
         email,
         url: "https://tokha-creations.vercel.app/admin/callback",
-        phrase: true,
       }),
       cache: "no-store",
     });
