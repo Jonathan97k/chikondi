@@ -1,16 +1,29 @@
+import Image from "next/image";
+
 export default function Loading() {
   return (
-    <div className="min-h-[70vh] flex flex-col items-center justify-center bg-[#E8E4D9] text-[#20251F] px-4">
-      <div className="flex flex-col items-center space-y-4 animate-pulse">
-        <div className="w-16 h-16 rounded-xl bg-[#20251F] p-2 flex items-center justify-center shadow-lg border border-[#C9A54D]/30">
-          <img src="/logo.webp" alt="Chikondi Logo" className="w-12 h-12 object-contain filter brightness-110" />
-        </div>
+    <div
+      role="status"
+      aria-live="polite"
+      aria-label="Loading TOKHA CREATIONS"
+      className="flex min-h-screen flex-col items-center justify-center bg-[#20251F] px-5 text-[#E8E4D9]"
+    >
+      <div className="flex flex-col items-center gap-6">
+        <Image
+          src="/images/tokha-creations-logo.webp"
+          alt="TOKHA CREATIONS"
+          width={480}
+          height={321}
+          priority
+          className="tokha-loading-logo h-auto max-h-56 w-64 object-contain sm:w-80"
+        />
         <div className="text-center">
-          <h2 className="text-lg font-bold tracking-tight text-[#20251F]">Chikondi Official</h2>
-          <p className="text-xs text-[#5B6259] tracking-widest uppercase mt-1">Loading experience...</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#C9A54D]">
+            Loading your creative experience
+          </p>
         </div>
-        <div className="w-32 h-1 bg-[#D6D9D1] rounded-full overflow-hidden mt-2">
-          <div className="w-full h-full bg-[#C9A54D] animate-[shimmer_1.5s_infinite]"></div>
+        <div className="h-1 w-40 overflow-hidden rounded-full bg-white/15">
+          <div className="tokha-loading-progress h-full w-1/2 rounded-full bg-[#C9A54D]" />
         </div>
       </div>
     </div>
