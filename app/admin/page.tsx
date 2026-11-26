@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -5,7 +6,15 @@ const PROJECT_ID = "6b08286d00341553344a";
 const ENDPOINT = "https://fra.cloud.appwrite.io/v1";
 const COOKIE_NAME = "tokha_admin_session";
 
-export default async function AdminPage() {
+export default function AdminPage() {
+  return (
+    <Suspense fallback={<main className="min-h-screen bg-[#F6F5F0] px-5 py-20 text-center text-[#5B6259]">Loading secure admin workspace…</main>}>
+      <AdminDashboard />
+    </Suspense>
+  );
+}
+
+async function AdminDashboard() {
   const cookieStore = await cookies();
   const sessionSecret = cookieStore.get(COOKIE_NAME)?.value;
   if (!sessionSecret) redirect("/admin/login");
