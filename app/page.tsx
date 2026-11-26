@@ -4,9 +4,9 @@ import Link from "next/link";
 const pillars = [
   { number: "01", title: "Music", detail: "Music production, promotion and the stories behind the sound.", href: "/music", action: "Explore music", image: "/images/simple-chicco-dzinia-lanu-cover.webp", alt: "Simple Chicco — Dzinia Lanu music artwork", imageClass: "object-cover" },
   { number: "02", title: "Films & Writing", detail: "Scriptwriting, acting, directing and visual storytelling.", href: "/writing", action: "Explore stories", image: "/images/nzotheka-film-poster.webp", alt: "N'zotheka film poster", imageClass: "object-cover" },
-  { number: "03", title: "Production", detail: "Creative production and collaboration across music and film.", href: "/production", action: "View production", image: "/images/tokha-creative-team-wide.webp", alt: "TOKHA CREATIONS team working together", imageClass: "object-cover" },
-  { number: "04", title: "About TOKHA", detail: "The people, purpose and creative movement behind the work.", href: "/about", action: "Meet the team", image: "/images/tokha-creative-team-portrait.webp", alt: "TOKHA CREATIONS team portrait", imageClass: "object-cover" },
-  { number: "05", title: "Community", detail: "Art, culture and youth empowerment through creative work.", href: "/community", action: "Learn more", image: "/images/tokha-creative-team-wide.webp", alt: "The TOKHA CREATIONS creative community", imageClass: "object-cover object-[center_35%]" },
+  { number: "03", title: "Production", detail: "Creative production and collaboration across music and film.", href: "/production", action: "View production", image: "/images/tokha-creative-team-wide.webp", alt: "TOKHA CREATIONS team working together", imageClass: "object-contain bg-[#101710] p-4 sm:p-6" },
+  { number: "04", title: "About TOKHA", detail: "The people, purpose and creative movement behind the work.", href: "/about", action: "Meet the team", image: "/images/tokha-creative-team-portrait.webp", alt: "TOKHA CREATIONS team portrait", imageClass: "object-contain bg-[#101710] p-4 sm:p-6" },
+  { number: "05", title: "Community", detail: "Art, culture and youth empowerment through creative work.", href: "/community", action: "Learn more", community: true, image: "", alt: "Malawian village life and cultural celebrations", imageClass: "" },
   { number: "06", title: "Bookings", detail: "Performances, commissions and creative collaborations.", href: "/hire", action: "Make an inquiry", image: "/images/tokha-creations-logo.webp", alt: "TOKHA CREATIONS official logo", imageClass: "object-contain p-10 sm:p-12" },
 ];
 
@@ -51,7 +51,15 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-[1440px] gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {pillars.map((item) => (
             <Link key={item.number} href={item.href} className="group relative isolate flex min-h-[330px] flex-col justify-end overflow-hidden rounded-2xl border border-white/15 bg-[#172018] transition duration-300 hover:-translate-y-1 hover:border-[#f5c400]/70 sm:min-h-[370px]">
-              <Image src={item.image} alt={item.alt} fill sizes="(min-width: 1280px) 32vw, (min-width: 640px) 48vw, 100vw" className={`z-0 ${item.imageClass} transition duration-700 group-hover:scale-105`} />
+              {item.community ? (
+                <div className="tokha-community-card-slideshow absolute inset-0 z-0" role="img" aria-label="Malawian village life, traditional drumming and cultural celebrations">
+                  <img src="https://images.pexels.com/photos/36884525/pexels-photo-36884525/free-photo-of-aerial-view-of-rural-village-in-malawi.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="" className="tokha-community-card-photo tokha-community-card-photo-one" />
+                  <img src="https://thenewsmongers.wordpress.com/wp-content/uploads/2022/07/ingoma-dance-during-the-coronation-pic-by-gracian-jeke-mana.jpg?w=1400" alt="" className="tokha-community-card-photo tokha-community-card-photo-two" />
+                  <img src="https://mafrsouthernafrica.files.wordpress.com/2016/06/open-day-2008-28.jpg" alt="" className="tokha-community-card-photo tokha-community-card-photo-three" />
+                </div>
+              ) : (
+                <Image src={item.image} alt={item.alt} fill sizes="(min-width: 1280px) 32vw, (min-width: 640px) 48vw, 100vw" className={`z-0 ${item.imageClass} transition duration-700 group-hover:scale-105`} />
+              )}
               <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#070c08] via-[#070c08]/55 to-[#070c08]/5" />
               <div className="absolute inset-0 z-10 bg-[#090f0b]/10 transition group-hover:bg-transparent" />
               <div className="relative z-20 p-6 sm:p-7">
