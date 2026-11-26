@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const pillars = [
-  { number: "01", title: "Music", detail: "Music production, promotion and the stories behind the sound.", href: "/music", action: "Explore music" },
-  { number: "02", title: "Film & Writing", detail: "Scriptwriting, acting, directing and visual storytelling.", href: "/writing", action: "Explore stories" },
-  { number: "03", title: "Production", detail: "Creative production and collaboration across music and film.", href: "/production", action: "View production" },
-  { number: "04", title: "About TOKHA", detail: "The people, purpose and creative movement behind the work.", href: "/about", action: "Meet the team" },
-  { number: "05", title: "Community", detail: "Art, culture and youth empowerment through creative work.", href: "/community", action: "Learn more" },
-  { number: "06", title: "Bookings", detail: "Performances, commissions and creative collaborations.", href: "/hire", action: "Make an inquiry" },
+  { number: "01", title: "Music", detail: "Music production, promotion and the stories behind the sound.", href: "/music", action: "Explore music", image: "/images/simple-chicco-dzinia-lanu-cover.webp", alt: "Simple Chicco — Dzinia Lanu music artwork", imageClass: "object-cover" },
+  { number: "02", title: "Films & Writing", detail: "Scriptwriting, acting, directing and visual storytelling.", href: "/writing", action: "Explore stories", image: "/images/nzotheka-film-poster.webp", alt: "N'zotheka film poster", imageClass: "object-cover" },
+  { number: "03", title: "Production", detail: "Creative production and collaboration across music and film.", href: "/production", action: "View production", image: "/images/tokha-creative-team-wide.webp", alt: "TOKHA CREATIONS team working together", imageClass: "object-cover" },
+  { number: "04", title: "About TOKHA", detail: "The people, purpose and creative movement behind the work.", href: "/about", action: "Meet the team", image: "/images/tokha-creative-team-portrait.webp", alt: "TOKHA CREATIONS team portrait", imageClass: "object-cover" },
+  { number: "05", title: "Community", detail: "Art, culture and youth empowerment through creative work.", href: "/community", action: "Learn more", image: "/images/tokha-creative-team-wide.webp", alt: "The TOKHA CREATIONS creative community", imageClass: "object-cover object-[center_35%]" },
+  { number: "06", title: "Bookings", detail: "Performances, commissions and creative collaborations.", href: "/hire", action: "Make an inquiry", image: "/images/tokha-creations-logo.webp", alt: "TOKHA CREATIONS official logo", imageClass: "object-contain p-10 sm:p-12" },
 ];
 
 export default function HomePage() {
@@ -49,7 +49,22 @@ export default function HomePage() {
           <p className="max-w-lg text-sm leading-6 text-white/60">Discover the different disciplines and ways to connect with TOKHA CREATIONS.</p>
         </div>
         <div className="mx-auto grid max-w-[1440px] gap-5 sm:grid-cols-2 xl:grid-cols-3">
-          {pillars.map((item) => <Link key={item.number} href={item.href} className="group flex min-h-[210px] flex-col rounded-xl border border-white/15 bg-gradient-to-br from-[#202a20] to-[#101711] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#f5c400]/70"><span className="text-xs font-bold tracking-[.25em] text-[#f5c400]">{item.number}</span><h3 className="mt-6 font-serif text-3xl text-white">{item.title}</h3><p className="mt-3 text-sm leading-6 text-white/65">{item.detail}</p><span className="mt-auto flex items-center justify-between pt-6 text-[10px] font-bold uppercase tracking-[.2em] text-[#f5c400]">{item.action}<span className="text-lg transition group-hover:translate-x-2">↗</span></span></Link>)}
+          {pillars.map((item) => (
+            <Link key={item.number} href={item.href} className="group relative isolate flex min-h-[330px] flex-col justify-end overflow-hidden rounded-2xl border border-white/15 bg-[#172018] transition duration-300 hover:-translate-y-1 hover:border-[#f5c400]/70 sm:min-h-[370px]">
+              <Image src={item.image} alt={item.alt} fill sizes="(min-width: 1280px) 32vw, (min-width: 640px) 48vw, 100vw" className={`-z-20 ${item.imageClass} transition duration-700 group-hover:scale-105`} />
+              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#070c08] via-[#070c08]/55 to-[#070c08]/5" />
+              <div className="absolute inset-0 -z-10 bg-[#090f0b]/10 transition group-hover:bg-transparent" />
+              <div className="p-6 sm:p-7">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold tracking-[.25em] text-[#f5c400]">{item.number}</span>
+                  <span className="rounded-full border border-white/35 bg-black/25 px-3 py-1 text-[9px] font-bold uppercase tracking-[.18em] text-white/80 backdrop-blur">TOKHA</span>
+                </div>
+                <h3 className="mt-7 font-serif text-3xl text-white sm:text-4xl">{item.title}</h3>
+                <p className="mt-2 max-w-sm text-sm leading-6 text-white/75">{item.detail}</p>
+                <span className="mt-5 flex items-center justify-between border-t border-white/25 pt-4 text-[10px] font-bold uppercase tracking-[.2em] text-[#f5c400]">{item.action}<span className="text-lg transition group-hover:translate-x-2">↗</span></span>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
