@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
+  { href: "/", label: "Home" },
   { href: "/play", label: "Listen / Watch" },
   { href: "/music", label: "Music" },
   { href: "/writing", label: "Film & Writing" },
@@ -43,7 +44,7 @@ export default function SiteHeader() {
         <nav aria-label="Main navigation" className="hidden items-center gap-5 font-medium text-sm lg:flex xl:gap-7">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
-            return <Link key={link.href} href={link.href} className={`border-b-2 py-1 transition-colors ${isActive ? "border-[#C9A54D] font-semibold text-[#C9A54D]" : "border-transparent text-[#E8E4D9] hover:text-[#C9A54D]"}`}>{link.label}</Link>;
+            return <Link key={link.href} href={link.href} aria-current={isActive ? "page" : undefined} className={`border-b-2 py-1 transition-colors ${isActive ? "border-[#C9A54D] font-semibold text-[#C9A54D]" : "border-transparent text-[#E8E4D9] hover:text-[#C9A54D]"}`}>{link.label}</Link>;
           })}
         </nav>
 
@@ -70,7 +71,7 @@ export default function SiteHeader() {
         <nav aria-label="Mobile navigation" className="flex flex-col gap-3 py-4">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
-            return <Link key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} className={`rounded-lg px-4 py-3 text-lg font-medium transition-all ${isActive ? "border-l-4 border-[#C9A54D] bg-[#C9A54D]/20 font-bold text-[#C9A54D]" : "text-[#E8E4D9] hover:bg-white/5 active:bg-white/10"}`}>{link.label}</Link>;
+            return <Link key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} aria-current={isActive ? "page" : undefined} className={`rounded-lg px-4 py-3 text-lg font-medium transition-all ${isActive ? "border-l-4 border-[#C9A54D] bg-[#C9A54D]/20 font-bold text-[#C9A54D]" : "text-[#E8E4D9] hover:bg-white/5 active:bg-white/10"}`}>{link.label}</Link>;
           })}
         </nav>
         <div className="border-t border-white/10 pb-12 pt-6">
