@@ -13,16 +13,20 @@ type YouTubePlaylistResponse = {
   nextPageToken?: string;
 };
 
-function channelLookup(url: string) {
+type ChannelLookup =
+  | { kind: "handle"; value: string }
+  | { kind: "id"; value: string };
+
+function channelLookup(url: string): ChannelLookup | null {
   const value = url.trim();
   const handle = value.match(/youtube\.com\/@([^/?#]+)/i);
   const channelId = value.match(/youtube\.com\/channel\/(UC[a-zA-Z0-9_-]+)/i);
   const handleName = handle?.[1];
   const channelIdentifier = channelId?.[1];
-  if (handleName) return { forHandle: handleName };
-  if (channelIdentifier) return { id: channelIdentifier };
-  if (/^UC[a-zA-Z0-9_-]+$/.test(value)) return { id: value };
-  if (/^@?[a-zA-Z0-9._-]+$/.test(value)) return { forHandle: value.replace(/^@/, "") };
+  if (handleName) return { kind: "handle", value: handleName };
+  if (channelIdentifier) return { kind: "id", value: channelIdentifier };
+  if (/^UC[a-zA-Z0-9_-]+$/.test(value)) return { kind: "id", value };
+  if (/^@?[a-zA-Z0-9._-]+$/.test(value)) return { kind: "handle", value: value.replace(/^@/, "") };
   return null;
 }
 
@@ -43,8 +47,8 @@ export async function GET(request: NextRequest) {
       part: "contentDetails,snippet",
       key: apiKey,
     });
-    if ("forHandle" in lookup) channelParams.set("forHandle", lookup.forHandle);
-    else channelParams.set("id", lookup.id);
+    if (lookup.kind === "handle") channelParams.set("forHandle", lookup.value);
+    else channelParams.set("id", lookup.value);
 
     const channelResponse = await fetch(`https://www.googleapis.com/youtube/v3/channels?${channelParams}`, {
       next: { revalidate: 3600 },
