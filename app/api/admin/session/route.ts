@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     }
 
     const sessionResponse = await fetch(`${ENDPOINT}/account/sessions/token`, {
-      method: "PUT",
+      method: "POST",
       headers: { "Content-Type": "application/json", "X-Appwrite-Project": PROJECT_ID },
       body: JSON.stringify({ userId, secret }),
       cache: "no-store",
