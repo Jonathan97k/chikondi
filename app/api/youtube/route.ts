@@ -17,8 +17,10 @@ function channelLookup(url: string) {
   const value = url.trim();
   const handle = value.match(/youtube\.com\/@([^/?#]+)/i);
   const channelId = value.match(/youtube\.com\/channel\/(UC[a-zA-Z0-9_-]+)/i);
-  if (handle) return { forHandle: handle[1] };
-  if (channelId) return { id: channelId[1] };
+  const handleName = handle?.[1];
+  const channelIdentifier = channelId?.[1];
+  if (handleName) return { forHandle: handleName };
+  if (channelIdentifier) return { id: channelIdentifier };
   if (/^UC[a-zA-Z0-9_-]+$/.test(value)) return { id: value };
   if (/^@?[a-zA-Z0-9._-]+$/.test(value)) return { forHandle: value.replace(/^@/, "") };
   return null;
