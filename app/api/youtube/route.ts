@@ -15,8 +15,8 @@ type YouTubePlaylistResponse = {
 
 function channelLookup(url: string) {
   const value = url.trim();
-  const handle = value.match(/youtube\.com\/@([^/?#]+)/i);
-  const channelId = value.match(/youtube\.com\/channel\/(UC[a-zA-Z0-9_-]+)/i);
+  const handle = value.match(/youtube\\.com\\/@([^/?#]+)/i);
+  const channelId = value.match(/youtube\\.com\\/channel\\/(UC[a-zA-Z0-9_-]+)/i);
   if (handle) return { forHandle: handle[1] };
   if (channelId) return { id: channelId[1] };
   if (/^UC[a-zA-Z0-9_-]+$/.test(value)) return { id: value };
@@ -40,8 +40,10 @@ export async function GET(request: NextRequest) {
     const channelParams = new URLSearchParams({
       part: "contentDetails,snippet",
       key: apiKey,
-      ...lookup,
     });
+    if ("forHandle" in lookup) channelParams.set("forHandle", lookup.forHandle);
+    else channelParams.set("id", lookup.id);
+
     const channelResponse = await fetch(`https://www.googleapis.com/youtube/v3/channels?${channelParams}`, {
       next: { revalidate: 3600 },
     });
