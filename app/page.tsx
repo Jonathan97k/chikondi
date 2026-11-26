@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <main className="overflow-hidden bg-[#090f0b] text-[#f4efe4]">
       <section className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden">
-        <Image src="/images/tokha-creative-team-wide.webp" alt="The TOKHA CREATIONS creative team" fill priority sizes="100vw" className="object-cover object-center" />
+        <Image src="/images/tokha-creative-team-wide.webp" alt="The TOKHA CREATIONS creative team" fill priority sizes="100vw" className="object-cover object-top" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#080e09]/95 via-[#080e09]/75 to-[#080e09]/25" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080e09] via-transparent to-black/20" />
         <div className="relative z-10 mx-auto flex min-h-[calc(100svh-5rem)] max-w-[1600px] flex-col justify-between px-5 pb-7 pt-8 sm:px-10 sm:pb-9 lg:px-16 xl:px-20">
