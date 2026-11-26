@@ -1,10 +1,28 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div className="bg-[#eee9dd] text-[#20251f]">
-      <section className="bg-[#171d18] px-6 py-20 text-[#f4efe4] sm:px-12 lg:px-20 lg:py-28"><div className="mx-auto max-w-6xl"><p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#c9a96c]">The person behind the work</p><h1 className="mt-6 font-serif text-5xl leading-[.98] sm:text-7xl lg:text-8xl">The story of<br /><em className="text-[#c9a96c]">Chikondi.</em></h1><p className="mt-8 max-w-2xl text-base leading-8 text-[#d7d3c8]">An introduction to the artist, writer, producer and the values that shape his creative life.</p><figure className="mt-12 overflow-hidden rounded-sm"><img src="https://images.unsplash.com/photo-1714793625539-da7478f34a43?auto=format&fit=crop&w=1800&q=85" alt="Temporary Rasta-themed stock photograph; not a portrait of Chikondi" className="aspect-[16/9] w-full object-cover sm:aspect-[21/9]" /><figcaption className="mt-2 text-[9px] uppercase tracking-[.18em] text-[#c9a96c]">Temporary Rasta-themed stock image · Unsplash · Chikondi’s approved portrait will replace this</figcaption></figure></div></section>
-      <section className="mx-auto grid max-w-6xl gap-12 px-6 py-20 sm:px-12 lg:grid-cols-[1.2fr_.8fr] lg:px-20"><div className="space-y-6"><p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#92713d]">Biography · Identity · Values</p><h2 className="font-serif text-4xl sm:text-5xl">A life and practice still being told.</h2><p className="text-base leading-8 text-[#686b61]">Tokha Creations is a movement focused on art, talent, culture and youth empowerment. Founded by Chikondi Simple Chagoma, Tokha Creations specializes in music production and promotion, scriptwriting, acting, movie directing and production. The movement uses creativity and storytelling to uplift, inspire and create opportunities for young people.</p><p className="text-sm leading-7 text-[#686b61]">A full biography, personal history, selected milestones and approved portrait photography will be added after review. This avoids publishing assumptions about his life or professional history.</p><Link href="/hire" className="inline-flex border-b border-[#92713d] pb-2 text-[10px] font-bold uppercase tracking-[.2em]">Connect with Chikondi ↗</Link></div><aside className="h-fit border border-[#d2cbbb] bg-[#e3ddcf] p-8"><p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#92713d]">Creative pillars</p><ul className="mt-6 space-y-4 font-serif text-2xl"><li>Music production & promotion</li><li>Scriptwriting</li><li>Acting</li><li>Movie directing</li><li>Film production</li></ul></aside></section>
-    </div>
+    <main className="bg-[#eee9dd] text-[#20251f]">
+      <section className="bg-[#171d18] px-6 py-20 text-[#f4efe4] sm:px-12 lg:px-20 lg:py-24">
+        <div className="mx-auto max-w-6xl">
+          <p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#c9a96c]">Art · Talent · Culture</p>
+          <h1 className="mt-6 font-serif text-5xl leading-[.98] sm:text-7xl lg:text-8xl">Meet<br /><em className="text-[#c9a96c]">TOKHA CREATIONS.</em></h1>
+          <p className="mt-8 max-w-2xl text-base leading-8 text-[#d7d3c8]">A creative movement focused on art, talent, culture and youth empowerment.</p>
+          <figure className="mt-12 overflow-hidden"><Image src="/images/tokha-creative-team-wide.webp" alt="TOKHA CREATIONS creative team together" width={1800} height={1000} priority sizes="(min-width: 1024px) 80vw, 100vw" className="aspect-[16/9] w-full object-cover sm:aspect-[21/9]" /></figure>
+        </div>
+      </section>
+      <section className="mx-auto grid max-w-6xl gap-12 px-6 py-16 sm:px-12 lg:grid-cols-[1.1fr_.9fr] lg:px-20 lg:py-20">
+        <div className="space-y-6">
+          <p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#92713d]">Our purpose</p>
+          <h2 className="font-serif text-4xl sm:text-5xl">Creativity with a shared purpose.</h2>
+          <p className="text-base leading-8 text-[#686b61]">Founded by Chikondi Simple Chagoma, TOKHA CREATIONS specializes in music production and promotion, scriptwriting, acting, movie directing and film production. The movement brings these creative disciplines together through a focus on art, talent, culture and youth empowerment.</p>
+          <p className="text-sm leading-7 text-[#686b61]">This space will continue to grow with the team’s approved biographies, individual credits and project stories.</p>
+          <Link href="/hire" className="inline-flex border-b border-[#92713d] pb-2 text-[10px] font-bold uppercase tracking-[.2em]">Connect with TOKHA ↗</Link>
+        </div>
+        <figure className="h-fit overflow-hidden bg-[#e3ddcf] p-3"><Image src="/images/tokha-creative-team-portrait.webp" alt="TOKHA CREATIONS team portrait" width={1200} height={1500} sizes="(min-width: 1024px) 35vw, 100vw" className="aspect-[4/5] w-full object-cover" /><figcaption className="px-3 py-3 text-[10px] font-semibold uppercase tracking-[.18em] text-[#92713d]">The TOKHA CREATIONS team</figcaption></figure>
+      </section>
+      <section className="bg-[#20271f] px-6 py-16 text-[#f1eee5] sm:px-12 lg:px-20"><div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[.7fr_1.3fr]"><div><p className="text-[10px] font-bold uppercase tracking-[.3em] text-[#c9a96c]">Creative disciplines</p><h2 className="mt-4 font-serif text-4xl">What we do.</h2></div><ul className="grid gap-3 sm:grid-cols-2">{["Music production & promotion","Scriptwriting","Acting","Movie directing","Film production"].map((item) => <li key={item} className="border-b border-white/15 py-4 font-serif text-2xl">{item}</li>)}</ul></div></section>
+    </main>
   );
 }
