@@ -1,23 +1,19 @@
-import Link from "next/link";
-
 export default function AdminDashboardPage() {
   return (
-    <main className="max-w-3xl mx-auto px-4 py-20 text-[#20251F]">
-      <section className="bg-white rounded-xl p-8 sm:p-10 border border-[#D6D9D1] shadow-sm space-y-5">
-        <span className="text-xs uppercase tracking-widest text-[#C9A54D] font-bold">TOKHA CREATIONS · Admin CMS</span>
-        <h1 className="text-2xl sm:text-3xl font-extrabold">Publishing dashboard not yet activated</h1>
-        <p className="text-sm sm:text-base leading-relaxed text-[#5B6259]">
-          This area will let the owner manage music, photographs, creative projects, and YouTube video links. It is currently unavailable while secure owner authentication and private content storage are being configured.
-        </p>
-        <p className="text-sm leading-relaxed text-[#5B6259]">
-          No sample inquiries, invented activity figures, or unpublished owner content are displayed here.
-        </p>
-        <Link
-          href="/admin/login"
-          className="inline-flex px-5 py-3 rounded-lg bg-[#20251F] text-[#E8E4D9] text-sm font-bold hover:bg-[#C9A54D] hover:text-[#20251F] transition-all"
-        >
-          Admin access information
-        </Link>
+    <main className="max-w-4xl mx-auto px-4 py-16 text-[#20251F]">
+      <div className="mb-10 flex flex-wrap items-center justify-between gap-4 border-b border-[#D6D9D1] pb-6">
+        <div>
+          <span className="text-xs uppercase tracking-widest text-[#C9A54D] font-bold">TOKHA CREATIONS · Admin CMS</span>
+          <h1 className="mt-1 text-3xl font-extrabold">Publishing dashboard</h1>
+        </div>
+        <form action="/api/admin/logout" method="post">
+          <button type="submit" className="rounded-lg bg-[#20251F] px-4 py-2 text-sm font-semibold text-white hover:bg-[#B18B35]">Sign out</button>
+        </form>
+      </div>
+      <section className="rounded-xl border border-[#D6D9D1] bg-white p-7 shadow-sm space-y-4">
+        <h2 className="text-xl font-bold">Your CMS access is active</h2>
+        <p className="text-sm leading-6 text-[#5B6259]">You are signed in. Content editing and media management will be enabled here after the publishing tools are connected.</p>
+        <p className="text-sm leading-6 text-[#5B6259]">No sample inquiries, invented activity figures, or unpublished owner content are displayed.</p>
       </section>
     </main>
   );
