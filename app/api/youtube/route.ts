@@ -15,8 +15,8 @@ type YouTubePlaylistResponse = {
 
 function channelLookup(url: string) {
   const value = url.trim();
-  const handle = value.match(/youtube\\.com\\/@([^/?#]+)/i);
-  const channelId = value.match(/youtube\\.com\\/channel\\/(UC[a-zA-Z0-9_-]+)/i);
+  const handle = value.match(/youtube\.com\/@([^/?#]+)/i);
+  const channelId = value.match(/youtube\.com\/channel\/(UC[a-zA-Z0-9_-]+)/i);
   if (handle) return { forHandle: handle[1] };
   if (channelId) return { id: channelId[1] };
   if (/^UC[a-zA-Z0-9_-]+$/.test(value)) return { id: value };
