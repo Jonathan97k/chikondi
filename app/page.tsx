@@ -51,10 +51,10 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-[1440px] gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {pillars.map((item) => (
             <Link key={item.number} href={item.href} className="group relative isolate flex min-h-[330px] flex-col justify-end overflow-hidden rounded-2xl border border-white/15 bg-[#172018] transition duration-300 hover:-translate-y-1 hover:border-[#f5c400]/70 sm:min-h-[370px]">
-              <Image src={item.image} alt={item.alt} fill sizes="(min-width: 1280px) 32vw, (min-width: 640px) 48vw, 100vw" className={`-z-20 ${item.imageClass} transition duration-700 group-hover:scale-105`} />
-              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#070c08] via-[#070c08]/55 to-[#070c08]/5" />
-              <div className="absolute inset-0 -z-10 bg-[#090f0b]/10 transition group-hover:bg-transparent" />
-              <div className="p-6 sm:p-7">
+              <Image src={item.image} alt={item.alt} fill sizes="(min-width: 1280px) 32vw, (min-width: 640px) 48vw, 100vw" className={`z-0 ${item.imageClass} transition duration-700 group-hover:scale-105`} />
+              <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#070c08] via-[#070c08]/55 to-[#070c08]/5" />
+              <div className="absolute inset-0 z-10 bg-[#090f0b]/10 transition group-hover:bg-transparent" />
+              <div className="relative z-20 p-6 sm:p-7">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold tracking-[.25em] text-[#f5c400]">{item.number}</span>
                   <span className="rounded-full border border-white/35 bg-black/25 px-3 py-1 text-[9px] font-bold uppercase tracking-[.18em] text-white/80 backdrop-blur">TOKHA</span>
