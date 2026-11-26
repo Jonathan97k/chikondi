@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import PasswordChangeForm from "./PasswordChangeForm";
 
 const PROJECT_ID = "6b08286d00341553344a";
 const ENDPOINT = "https://fra.cloud.appwrite.io/v1";
@@ -67,6 +68,7 @@ async function AdminDashboard() {
             </article>
           ))}
         </section>
+        <PasswordChangeForm />
         <p className="text-xs leading-5 text-[#777D73]">No sample content or invented activity figures are shown. Developer access is separate from the owner account and can be withdrawn after handover.</p>
       </div>
     </main>
