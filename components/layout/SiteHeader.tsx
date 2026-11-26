@@ -36,8 +36,8 @@ export default function SiteHeader() {
     <header className="rasta-site-header sticky top-0 z-50 text-[#171d18] shadow-md">
       <div className="mx-auto flex h-20 w-full max-w-[1440px] items-center justify-between gap-3 px-4 sm:h-24 sm:px-8 lg:px-20">
         <button type="button" onClick={() => setLogoOpen(true)} aria-label="View TOKHA CREATIONS official logo" className="group flex min-w-0 items-center rounded-lg text-left focus:outline-none focus:ring-2 focus:ring-[#171d18] focus:ring-offset-2 focus:ring-offset-[#F2C230]">
-          <span className="flex h-16 w-28 shrink-0 items-center justify-start sm:h-20 sm:w-40">
-            <Image src="/images/tokha-creations-logo.webp" alt="TOKHA CREATIONS official logo" width={320} height={214} priority className="max-h-16 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-105 sm:max-h-20" />
+          <span className="flex h-20 w-32 shrink-0 items-center justify-start sm:h-24 sm:w-48">
+            <Image src="/images/tokha-creations-logo.webp" alt="TOKHA CREATIONS official logo" width={320} height={214} priority className="tokha-logo-vibrate max-h-20 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-105 sm:max-h-24" />
           </span>
         </button>
 
