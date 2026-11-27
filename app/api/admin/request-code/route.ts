@@ -2,8 +2,6 @@ import { randomInt } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { ADMIN_EMAILS, ADMIN_OTP_COOKIE, otpDigest, signPayload } from "@/lib/admin-auth";
 
-export const runtime = "nodejs";
-
 export async function POST(request: NextRequest) {
   try {
     const { email: rawEmail } = await request.json();
