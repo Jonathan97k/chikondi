@@ -1,10 +1,7 @@
 import { Suspense } from "react";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-
-const PROJECT_ID = "6b08286d00341553344a";
-const ENDPOINT = "https://fra.cloud.appwrite.io/v1";
-const COOKIE_NAME = "tokha_admin_session";
+import { ADMIN_SESSION_COOKIE, readSignedPayload } from "@/lib/admin-auth";
 
 export default function AdminPage() {
   return (
@@ -16,20 +13,12 @@ export default function AdminPage() {
 
 async function AdminDashboard() {
   const cookieStore = await cookies();
-  const sessionSecret = cookieStore.get(COOKIE_NAME)?.value;
-  if (!sessionSecret) redirect("/admin/login");
+  const token = cookieStore.get(ADMIN_SESSION_COOKIE)?.value;
+  const session = token ? readSignedPayload(token) : null;
+  if (!session) redirect("/admin/login");
 
-  const accountResponse = await fetch(`${ENDPOINT}/account`, {
-    headers: { "X-Appwrite-Project": PROJECT_ID, "X-Appwrite-Session": sessionSecret },
-    cache: "no-store",
-  });
-  const account = accountResponse.ok ? await accountResponse.json() : null;
-  const email = String(account?.email ?? "").toLowerCase();
+  const email = session.email;
   const developer = email === "kaphirikwikwete97@gmail.com";
-  const owner = email === "simplechicco864@gmail.com";
-
-  if (!developer && !owner) redirect("/admin/login");
-
   const sections = [
     ["Music", "Add and organise music releases."],
     ["Photography", "Manage photo galleries and featured images."],
