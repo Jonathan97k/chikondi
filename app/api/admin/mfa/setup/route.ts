@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     if (!recoveryResponse.ok || !Array.isArray(recovery.recoveryCodes)) return NextResponse.json({ error: "Could not create recovery codes. Keep this session open and retry." }, { status: 502 });
     const enableResponse = await appwriteRequest("/account/mfa", "PATCH", session, { mfa: true });
     if (!enableResponse.ok) return NextResponse.json({ error: "Appwrite could not enforce MFA yet. Keep this session open and retry." }, { status: 502 });
-    const response = NextResponse.json({ enabled: true, recoveryCodes: recovery.recoveryCodes });
+    const response = NextResponse.json({ enabled: true, recoveryCodes: recovery.recoveryCodes }, { headers: { "Cache-Control": "no-store, private" } });
     response.cookies.set(MFA_VERIFIED_COOKIE, "1", { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "strict", path: "/", maxAge: 8 * 60 * 60 });
     return response;
   }
