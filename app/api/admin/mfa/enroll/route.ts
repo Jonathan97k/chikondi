@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { ADMIN_SESSION_COOKIE, appwriteRequest, hasSameOrigin, isAllowedAdmin } from "@/lib/tokha-admin-auth";
+import { ADMIN_SESSION_COOKIE, MFA_VERIFIED_COOKIE, appwriteRequest, hasSameOrigin, isAllowedAdmin } from "@/lib/tokha-admin-auth";
 
 export async function POST(request: Request) {
   if (!hasSameOrigin(request)) return NextResponse.json({ error: "Invalid request origin." }, { status: 403 });
@@ -23,7 +23,9 @@ export async function POST(request: Request) {
 
     const enable = await appwriteRequest("/account/mfa", "PATCH", session, { mfa: true });
     if (!enable.ok) return NextResponse.json({ error: "Authenticator verified, but Appwrite could not enforce MFA. Keep this session open and retry." }, { status: 502 });
-    return NextResponse.json({ success: true, recoveryCodes: recovery.recoveryCodes });
+    const response = NextResponse.json({ success: true, recoveryCodes: recovery.recoveryCodes });
+    response.cookies.set(MFA_VERIFIED_COOKIE, "1", { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "strict", path: "/", maxAge: 8 * 60 * 60 });
+    return response;
   } catch {
     return NextResponse.json({ error: "Unable to finish authenticator setup." }, { status: 400 });
   }
