@@ -12,7 +12,7 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json();
-    const factor = body?.factor === "recoveryCode" ? "recoveryCode" : "totp";
+    const factor = body?.factor === "recoverycode" ? "recoverycode" : "totp";
     const result = await appwriteRequest("/account/mfa/challenges", "POST", session, { factor });
     const challenge = await result.json().catch(() => ({}));
     if (!result.ok || typeof challenge.$id !== "string") return NextResponse.json({ error: "Could not start that verification method." }, { status: 400 });
