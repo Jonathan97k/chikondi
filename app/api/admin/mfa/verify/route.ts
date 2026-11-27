@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { ADMIN_SESSION_COOKIE, PENDING_CHALLENGE_COOKIE, PENDING_SESSION_COOKIE, appwriteRequest, hasSameOrigin, isAllowedAdmin } from "@/lib/tokha-admin-auth";
+import { ADMIN_SESSION_COOKIE, MFA_VERIFIED_COOKIE, PENDING_CHALLENGE_COOKIE, PENDING_SESSION_COOKIE, appwriteRequest, hasSameOrigin, isAllowedAdmin } from "@/lib/tokha-admin-auth";
 
 const secureCookie = process.env.NODE_ENV === "production";
 
@@ -28,6 +28,7 @@ export async function POST(request: Request) {
     }
 
     const response = NextResponse.json({ success: true });
+    response.cookies.set(MFA_VERIFIED_COOKIE, "1", { httpOnly: true, secure: secureCookie, sameSite: "strict", path: "/", maxAge: 8 * 60 * 60 });
     response.cookies.set(ADMIN_SESSION_COOKIE, finalSecret, {
       httpOnly: true, secure: secureCookie, sameSite: "strict", path: "/",
       ...(verified.expire ? { expires: new Date(verified.expire) } : { maxAge: 8 * 60 * 60 }),
