@@ -23,7 +23,7 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         userId,
         email,
-        url: "https://tokha-creations.vercel.app/admin/callback",
+        url: `${(process.env.TOKHA_SITE_URL || "https://tokha-creations.vercel.app").replace(/\\/$/, "")}/admin/callback`,
       }),
       cache: "no-store",
     });
