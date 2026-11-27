@@ -14,7 +14,7 @@ export default function AdminMfaVerifyPage() {
   async function switchFactor(nextFactor: "totp" | "recoveryCode") {
     setLoading(true); setMessage("");
     try {
-      const response = await fetch("/api/admin/mfa/challenge", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ factor: nextFactor }) });
+      const response = await fetch("/api/admin/mfa/challenge", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ factor: nextFactor === "recoveryCode" ? "recoverycode" : "totp" }) });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Could not change verification method.");
       setFactor(nextFactor); setOtp("");
