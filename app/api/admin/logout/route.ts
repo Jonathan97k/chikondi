@@ -13,6 +13,7 @@ export async function POST(request: NextRequest) {
   }
   const response = NextResponse.redirect(new URL("/admin/login", request.url));
   response.cookies.delete(ADMIN_SESSION_COOKIE);
+  response.cookies.delete(MFA_VERIFIED_COOKIE);
   response.cookies.delete(PENDING_SESSION_COOKIE);
   response.cookies.delete(PENDING_CHALLENGE_COOKIE);
   return response;
