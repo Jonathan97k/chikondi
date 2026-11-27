@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     }
 
     const userId = crypto.randomUUID();
-    const siteUrl = (process.env.TOKHA_SITE_URL || "https://tokha-creations.vercel.app").replace(/\/$/, "");
+    const siteUrl = new URL(process.env.TOKHA_SITE_URL || "https://tokha-creations.vercel.app").origin;
     const response = await fetch(`${ENDPOINT}/account/tokens/magic-url`, {
       method: "POST",
       headers: { "Content-Type": "application/json", "X-Appwrite-Project": PROJECT_ID },
