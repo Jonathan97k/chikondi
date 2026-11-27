@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ADMIN_OTP_COOKIE, ADMIN_SESSION_COOKIE, otpDigest, readSignedPayload, safeEqualHex, signPayload } from "@/lib/admin-auth";
 
-export const runtime = "nodejs";
-
 export async function POST(request: NextRequest) {
   const otpToken = request.cookies.get(ADMIN_OTP_COOKIE)?.value;
   const state = otpToken ? readSignedPayload(otpToken) : null;
