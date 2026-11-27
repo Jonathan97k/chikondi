@@ -29,7 +29,7 @@ function CompleteSignIn() {
       .then(async (response) => {
         const data = await response.json();
         if (!response.ok) throw new Error(data.error || "Sign-in failed.");
-        router.replace("/admin");
+        router.replace(data.mfaRequired ? "/admin/verify" : "/admin");
       })
       .catch((error: Error) => setMessage(error.message));
   }, [params, router]);
