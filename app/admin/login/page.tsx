@@ -34,7 +34,7 @@ export default function AdminLoginPage() {
         <div className="space-y-2">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#B18B35]">TOKHA CREATIONS · Admin CMS</p>
           <h1 className="text-3xl font-extrabold">Administrator sign in</h1>
-          <p className="text-sm leading-6 text-[#5B6259]">Enter your authorised email address. We’ll send you a one-time secure sign-in link; no password is needed.</p>
+          <p className="text-sm leading-6 text-[#5B6259]">Enter your authorised Gmail address. We’ll send a one-time sign-in link to that inbox. After opening it, you’ll verify with Google Authenticator. No website password is required.</p>
         </div>
         <form onSubmit={requestLink} className="space-y-4">
           <label htmlFor="admin-email" className="block text-sm font-semibold">Email address</label>
