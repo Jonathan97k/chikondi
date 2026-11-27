@@ -23,7 +23,7 @@ export async function POST(request: Request) {
 
     const enable = await appwriteRequest("/account/mfa", "PATCH", session, { mfa: true });
     if (!enable.ok) return NextResponse.json({ error: "Authenticator verified, but Appwrite could not enforce MFA. Keep this session open and retry." }, { status: 502 });
-    const response = NextResponse.json({ success: true, recoveryCodes: recovery.recoveryCodes });
+    const response = NextResponse.json({ success: true, recoveryCodes: recovery.recoveryCodes }, { headers: { "Cache-Control": "no-store, private" } });
     response.cookies.set(MFA_VERIFIED_COOKIE, "1", { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "strict", path: "/", maxAge: 8 * 60 * 60 });
     return response;
   } catch {
