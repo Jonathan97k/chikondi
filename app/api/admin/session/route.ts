@@ -10,6 +10,33 @@ import {
 
 const secureCookie = process.env.NODE_ENV === "production";
 
+async function startMfaChallenge(sessionSecret: string) {
+  const challengeResponse = await appwriteRequest(
+    "/account/mfa/challenges",
+    "POST",
+    sessionSecret,
+    { factor: "totp" },
+  );
+  const challenge = await challengeResponse.json().catch(() => ({}));
+  if (!challengeResponse.ok || typeof challenge.$id !== "string") {
+    await appwriteRequest("/account/sessions/current", "DELETE", sessionSecret).catch(() => undefined);
+    return NextResponse.json(
+      { error: "We could not start authenticator verification. Please request a new sign-in link." },
+      { status: 502 },
+    );
+  }
+
+  const response = NextResponse.json({ success: true, mfaRequired: true });
+  response.cookies.set(PENDING_SESSION_COOKIE, sessionSecret, {
+    httpOnly: true, secure: secureCookie, sameSite: "strict", path: "/", maxAge: 5 * 60,
+  });
+  response.cookies.set(PENDING_CHALLENGE_COOKIE, challenge.$id, {
+    httpOnly: true, secure: secureCookie, sameSite: "strict", path: "/", maxAge: 5 * 60,
+  });
+  response.cookies.delete(ADMIN_SESSION_COOKIE);
+  return response;
+}
+
 export async function POST(request: Request) {
   if (!hasSameOrigin(request)) {
     return NextResponse.json({ error: "Invalid request origin." }, { status: 403 });
@@ -30,8 +57,14 @@ export async function POST(request: Request) {
     const accountResponse = await appwriteRequest("/account", "GET", session.secret);
     const account = await accountResponse.json().catch(() => ({}));
 
+    // Never issue a normal admin session to an account that already has MFA enabled.
+    // Challenge it even if Appwrite happens to return the account payload successfully.
     if (accountResponse.ok && isAllowedAdmin(account.email)) {
-      const response = NextResponse.json({ success: true, mfaRequired: false });
+      if (account.mfa === true) return await startMfaChallenge(session.secret);
+
+      // First-time setup only: this session can reach the MFA-enrolment screen,
+      // but the admin dashboard itself rejects accounts until MFA is enabled.
+      const response = NextResponse.json({ success: true, mfaRequired: false, setupRequired: true });
       response.cookies.set(ADMIN_SESSION_COOKIE, session.secret, {
         httpOnly: true, secure: secureCookie, sameSite: "strict", path: "/",
         expires: new Date(session.expire),
@@ -42,34 +75,14 @@ export async function POST(request: Request) {
     }
 
     if (!accountResponse.ok && account?.type === "user_more_factors_required") {
-      const challengeResponse = await appwriteRequest(
-        "/account/mfa/challenges",
-        "POST",
-        session.secret,
-        { factor: "totp" },
-      );
-      const challenge = await challengeResponse.json().catch(() => ({}));
-      if (!challengeResponse.ok || typeof challenge.$id !== "string") {
-        await appwriteRequest("/account/sessions/current", "DELETE", session.secret).catch(() => undefined);
-        return NextResponse.json({ error: "We could not start authenticator verification. Please request a new sign-in link." }, { status: 502 });
-      }
-
-      const response = NextResponse.json({ success: true, mfaRequired: true });
-      response.cookies.set(PENDING_SESSION_COOKIE, session.secret, {
-        httpOnly: true, secure: secureCookie, sameSite: "strict", path: "/",
-        maxAge: 5 * 60,
-      });
-      response.cookies.set(PENDING_CHALLENGE_COOKIE, challenge.$id, {
-        httpOnly: true, secure: secureCookie, sameSite: "strict", path: "/",
-        maxAge: 5 * 60,
-      });
-      return response;
+      return await startMfaChallenge(session.secret);
     }
 
     await appwriteRequest("/account/sessions/current", "DELETE", session.secret).catch(() => undefined);
-    return NextResponse.json({
-      error: "This account is not authorised or could not complete secure sign-in.",
-    }, { status: 403 });
+    return NextResponse.json(
+      { error: "This account is not authorised or could not complete secure sign-in." },
+      { status: 403 },
+    );
   } catch {
     return NextResponse.json({ error: "Unable to complete sign-in. Please request a fresh link." }, { status: 400 });
   }
