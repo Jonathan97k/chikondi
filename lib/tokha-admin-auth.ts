@@ -1,6 +1,7 @@
 export const APPWRITE_PROJECT_ID = "6b08286d00341553344a";
 export const APPWRITE_ENDPOINT = "https://fra.cloud.appwrite.io/v1";
 export const ADMIN_SESSION_COOKIE = "tokha_admin_session";
+export const MFA_VERIFIED_COOKIE = "tokha_admin_mfa_verified";
 export const PENDING_SESSION_COOKIE = "tokha_admin_pending";
 export const PENDING_CHALLENGE_COOKIE = "tokha_admin_challenge";
 
