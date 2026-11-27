@@ -29,6 +29,7 @@ async function AdminDashboard() {
   const owner = email === "simplechicco864@gmail.com";
 
   if (!developer && !owner) redirect("/admin/login");
+  if (account.mfa !== true) redirect("/admin/security/setup");
 
   const sections = [
     ["Music", "Add and organise music releases."],
