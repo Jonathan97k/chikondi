@@ -34,5 +34,5 @@ export async function POST(request: Request) {
   qrUrl.searchParams.set("size", "320");
   qrUrl.searchParams.set("margin", "1");
   qrUrl.searchParams.set("project", "6b08286d00341553344a");
-  return NextResponse.json({ enabled: false, secret: setup.secret, qrUrl: qrUrl.toString() });
+  return NextResponse.json({ enabled: false, secret: setup.secret, qrUrl: qrUrl.toString() }, { headers: { "Cache-Control": "no-store, private" } });
 }
