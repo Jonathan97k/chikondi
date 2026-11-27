@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 const PROJECT_ID = "6b08286d00341553344a";
 const ENDPOINT = "https://fra.cloud.appwrite.io/v1";
 const COOKIE_NAME = "tokha_admin_session";
+const MFA_COOKIE_NAME = "tokha_admin_mfa_verified";
 
 export default function AdminPage() {
   return (
@@ -30,6 +31,7 @@ async function AdminDashboard() {
 
   if (!developer && !owner) redirect("/admin/login");
   if (account.mfa !== true) redirect("/admin/security/setup");
+  if (cookieStore.get(MFA_COOKIE_NAME)?.value !== "1") redirect("/admin/login");
 
   const sections = [
     ["Music", "Add and organise music releases."],
