@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
   ADMIN_SESSION_COOKIE,
+  MFA_VERIFIED_COOKIE,
   PENDING_CHALLENGE_COOKIE,
   PENDING_SESSION_COOKIE,
   appwriteRequest,
